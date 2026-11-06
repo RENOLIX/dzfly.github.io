@@ -1,0 +1,10 @@
+node_modules/
+.env
+.env.*
+*.log
+*-qa.jpg
+desktop-home.jpg
+mobile-home.jpg
+/*.jpg
+/arabic-font.css
+/update-motion.mjs

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06275a">
+  <title>DZ FLY — Votre voyage commence ici</title>
+  <meta name="description" content="Préparez vos voyages depuis l’Algérie avec DZ FLY. Explorez les destinations et découvrez notre parcours de réservation.">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/hero-sky.webp" as="image">
+  <link rel="preload" href="assets/hero-stays.webp" as="image">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="motion.css">
+</head>
+<body>
+  <a class="skip-link" href="#search">Aller à la recherche</a>
+  <section class="hero" id="home" data-mode="flights">
+    <div class="hero-backdrop hero-backdrop-flights" aria-hidden="true"></div>
+    <div class="hero-backdrop hero-backdrop-stays" aria-hidden="true"></div>
+    <header class="header wrap">
+      <a class="brand" href="#home" aria-label="DZ FLY — Accueil"><img src="assets/logo-original.png" alt="DZ FLY" width="1448" height="1086"></a>
+      <nav class="desktop-nav" aria-label="Navigation principale">
+        <button class="nav-link is-active" data-service="flights" data-t="flights">Vols</button>
+        <button class="nav-link" data-service="stays" data-t="stays">Hébergement</button>
+      </nav>
+      <div class="header-actions">
+        <button class="glass-button my-trips" data-action="trips"><span data-icon="ticket"></span><span data-t="myTrips">Mes voyages</span><span class="trip-count" hidden>0</span></button>
+        <button class="glass-button language" data-action="language" aria-label="Changer de langue"><span data-icon="globe"></span><span id="language-code">FR</span></button>
+        <button class="glass-button round" data-action="menu" aria-label="Ouvrir le menu"><span data-icon="menu"></span></button>
+      </div>
+    </header>
+    <div class="hero-copy wrap">
+      <p class="eyebrow"><span data-t="eyebrow">LE MONDE VOUS ATTEND</span></p>
+      <h1 data-t="heroTitle">D’ici, vers tous<br>vos <em>ailleurs.</em></h1>
+      <p class="hero-sub" data-t="heroSub">Votre prochain départ commence avec DZ FLY.</p>
+    </div>
+    <div class="search-area wrap" id="search">
+      <div class="service-tabs" role="tablist" aria-label="Type de voyage">
+        <button class="service-tab active" data-service="flights" role="tab" aria-selected="true"><span data-icon="plane"></span><span data-t="flights">Vols</span></button>
+        <button class="service-tab" data-service="stays" role="tab" aria-selected="false"><span data-icon="bed"></span><span data-t="stays">Hébergement</span></button>
+      </div>
+      <form class="search-card" id="search-form">
+        <div class="search-top"><div class="trip-types" role="group" aria-label="Type de trajet">
+          <button type="button" class="active" data-trip="round" data-t="round">Aller-retour</button>
+          <button type="button" data-trip="one" data-t="one">Aller simple</button>
+          <button type="button" data-trip="multi" data-t="multi">Multi-destinations</button>
+        </div><span class="demo-tag" data-t="discovery">Version découverte</span></div>
+        <div class="search-fields" id="search-fields"></div>
+        <div id="extra-legs"></div>
+        <div class="search-options"><label><input type="checkbox" id="direct"><span data-t="direct">Vol direct</span></label><label><input type="checkbox" id="baggage"><span data-t="baggage">Bagage en soute inclus</span></label><span class="currency-note">DZD <span data-icon="chevron"></span></span></div>
+        <p id="search-error" class="form-error" role="alert" hidden></p>
+      </form>
+      <div class="hero-bottom"><div><span data-icon="compass"></span><span data-t="fromAlgeria">Depuis l’Algérie, vers de nouveaux horizons</span></div><div><span data-icon="heart"></span><span data-t="brandPromise">Votre voyage, tout simplement.</span></div></div>
+    </div>
+    <span class="hero-caption"><span data-icon="pin"></span><span id="hero-location">Au-dessus de la Méditerranée</span></span>
+  </section>
+  <main>
+    <section class="results-section wrap" id="results" hidden aria-labelledby="results-title"></section>
+    <section class="destinations wrap" id="destinations">
+      <div class="section-heading"><div><p class="eyebrow dark" data-t="escape">UNE ENVIE D’ÉVASION ?</p><h2 data-t="destTitle">Votre prochaine histoire commence ici.</h2></div><a class="text-link" href="#search"><span data-t="allDestinations">Trouver mon vol</span><span data-icon="arrow"></span></a></div>
+      <div class="destination-grid">
+        <button class="destination" data-destination="IST"><img src="assets/istanbul.jpg" alt="Mosquée et Bosphore à Istanbul" loading="lazy" width="600" height="720"><span class="destination-chip" data-t="culture">Culture & découvertes</span><span class="destination-bottom"><span><small>TURQUIE</small><strong>Istanbul</strong></span><span class="circle-arrow" data-icon="arrow"></span></span></button>
+        <button class="destination" data-destination="CDG"><img src="assets/paris.jpg" alt="La tour Eiffel et les toits de Paris" loading="lazy" width="600" height="720"><span class="destination-chip" data-t="cityBreak">Une escapade en ville</span><span class="destination-bottom"><span><small>FRANCE</small><strong>Paris</strong></span><span class="circle-arrow" data-icon="arrow"></span></span></button>
+        <button class="destination" data-destination="DPS"><img src="assets/bali.jpg" alt="Paysage tropical et architecture balinaise" loading="lazy" width="600" height="720"><span class="destination-chip" data-t="nature">Nature & déconnexion</span><span class="destination-bottom"><span><small>INDONÉSIE</small><strong>Bali</strong></span><span class="circle-arrow" data-icon="arrow"></span></span></button>
+        <button class="destination" data-destination="DXB"><img src="assets/dubai.jpg" alt="La skyline de Dubaï" loading="lazy" width="600" height="720"><span class="destination-chip" data-t="sun">Soleil toute l’année</span><span class="destination-bottom"><span><small>ÉMIRATS ARABES UNIS</small><strong>Dubaï</strong></span><span class="circle-arrow" data-icon="arrow"></span></span></button>
+      </div>
+    </section>
+    <section class="journey wrap" id="how-it-works">
+      <div class="journey-intro"><p class="eyebrow dark" data-t="madeForYou">PENSÉ POUR VOS VOYAGES</p><h2 data-t="journeyTitle">Moins de complications.<br>Plus de destinations.</h2><p data-t="journeySub">Un parcours simple pour préparer votre prochain départ, à votre rythme.</p><button class="text-link" data-action="how"><span data-t="how">Comment ça marche</span><span data-icon="arrow"></span></button></div>
+      <div class="benefits"><article><span class="benefit-icon" data-icon="search"></span><div><h3 data-t="compareTitle">Tout commence par une envie</h3><p data-t="compareSub">Choisissez votre destination, vos dates et les options qui comptent pour vous.</p></div><span class="benefit-number">01</span></article><article><span class="benefit-icon" data-icon="wallet"></span><div><h3 data-t="payTitle">Le choix, jusqu’au paiement</h3><p data-t="paySub">Découvrez le parcours CIB, Edahabia ou espèces, prévu pour le lancement.</p></div><span class="benefit-number">02</span></article><article><span class="benefit-icon" data-icon="ticket"></span><div><h3 data-t="tripTitle">Votre voyage à portée de main</h3><p data-t="tripSub">Enregistrez vos itinéraires et retrouvez-les dans votre espace Mes voyages.</p></div><span class="benefit-number">03</span></article></div>
+    </section>
+    <section class="invitation wrap"><div><span class="eyebrow" data-t="signature">DZ FLY · DEPUIS L’ALGÉRIE</span><h2 data-t="invitationTitle">Le plus beau voyage ?<br>Celui qui vous ressemble.</h2><a class="primary-button light" href="#search"><span data-t="prepare">Préparer mon voyage</span><span data-icon="arrow"></span></a></div><span class="invitation-plane" data-icon="plane"></span><div class="flight-trail" aria-hidden="true"></div></section>
+    <section class="faq wrap" id="faq"><div><p class="eyebrow dark" data-t="faqLabel">ON VOUS ACCOMPAGNE</p><h2 data-t="faqTitle">Avant de décoller.</h2></div><div id="faq-list"></div></section>
+  </main>
+  <footer><div class="wrap footer-top"><div class="footer-brand"><img src="assets/logo-original.png" alt="DZ FLY — Votre voyage, en Algérie et partout ailleurs" width="1448" height="1086"><p data-t="footerTag">Votre voyage, en Algérie<br>et partout ailleurs.</p></div><div><h3 data-t="explore">Explorer</h3><a href="#search" data-t="flights">Vols</a><button data-service="stays" data-t="stays">Hébergement</button><a href="#destinations" data-t="destinations">Destinations</a></div><div><h3 data-t="useful">À vos côtés</h3><button data-action="trips" data-t="myTrips">Mes voyages</button><a href="#faq" data-t="questions">Questions fréquentes</a><button data-action="help" data-t="help">Centre d’aide</button></div><div><h3 data-t="about">À propos de DZ FLY</h3><button data-action="privacy" data-t="privacy">Confidentialité</button><button data-action="terms" data-t="terms">Conditions d’utilisation</button><span class="made-in"><span class="flag-dot"></span> Made in Algeria</span></div></div><div class="wrap footer-bottom"><span>© <span id="year"></span> DZ FLY</span><span data-t="demoFooter">Version découverte · Aucun billet émis, aucun paiement encaissé.</span></div></footer>
+  <button class="help-fab" data-action="help"><span data-icon="headphones"></span><span data-t="needHelp">Besoin d’aide ?</span></button>
+  <dialog id="dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
