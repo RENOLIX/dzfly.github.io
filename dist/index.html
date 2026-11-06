@@ -8,9 +8,10 @@
   <meta name="robots" content="noindex,nofollow">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/hero-sky.webp" as="image">
-  <link rel="preload" href="assets/hero-stays.webp" as="image">
+  <link rel="preload" href="assets/hero-stays.webp" as="image" media="(min-width:761px)">
+  <link rel="preload" href="assets/hero-stays-mobile.webp" as="image" media="(max-width:760px)">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="motion.css">
+  <link rel="stylesheet" href="motion.css?v=20261106-mobile-stays">
 </head>
 <body>
   <a class="skip-link" href="#search">Aller à la recherche</a>
@@ -44,7 +45,7 @@
           <button type="button" class="active" data-trip="round" data-t="round">Aller-retour</button>
           <button type="button" data-trip="one" data-t="one">Aller simple</button>
           <button type="button" data-trip="multi" data-t="multi">Multi-destinations</button>
-        </div><span class="demo-tag" data-t="discovery">Version découverte</span></div>
+        </div></div>
         <div class="search-fields" id="search-fields"></div>
         <div id="extra-legs"></div>
         <div class="search-options"><label><input type="checkbox" id="direct"><span data-t="direct">Vol direct</span></label><label><input type="checkbox" id="baggage"><span data-t="baggage">Bagage en soute inclus</span></label><span class="currency-note">DZD <span data-icon="chevron"></span></span></div>

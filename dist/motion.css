@@ -49,6 +49,6 @@ dialog,.airport-list{overscroll-behavior:contain}
  .hero[data-mode=stays] .search-fields:before{inset:-16px;border-radius:17px}
  .hero[data-mode=stays] .search-top{margin-block:8px 5px}
  .hero-backdrop{background-position:40% center}
- .hero-backdrop-stays{background-position:58% center}
+ .hero-backdrop-stays{background-image:url('assets/hero-stays-mobile.webp');background-position:center center}
 }
 @media(prefers-reduced-motion:reduce){.hero-backdrop,.service-tabs:before{transition:none;transform:none}.hero[data-mode=stays] .service-tabs:before{transform:translateX(100%)}html[dir=rtl] .hero[data-mode=stays] .service-tabs:before{transform:translateX(-100%)}}

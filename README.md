@@ -12,6 +12,16 @@ Chaque push sur `main` lance `.github/workflows/pages.yml` : les vérifications 
 
 ## Ajustements des transitions
 
+### Photo Hébergement sur téléphone
+
+Sous 761 px, `hero-stays-mobile.webp` remplace le fond horizontal. La version PC reste `hero-stays.webp`. Les préchargements suivent le même seuil afin de ne pas télécharger les deux formats sur téléphone. Le badge « Version découverte » du hero a été retiré ; les indications sur les résultats fictifs restent présentes dans le parcours de démonstration.
+
+L’image mobile a été adaptée avec le générateur intégré Imagegen à partir de la photo PC `dist/assets/hero-stays.png`. Sources livrées : `dist/assets/hero-stays-mobile.png` et version WebP optimisée `dist/assets/hero-stays-mobile.webp`.
+
+Prompt utilisé :
+
+> Use case: precise-object-edit / background extension. Edit target: the attached desktop hotel hero photograph. The user explicitly wants THE SAME PHOTOGRAPH AND SAME HOTEL, only adapted for a smartphone. Create a tall portrait 9:20 or 1:2 mobile version by carefully reframing and extending the image above and below. Keep the exact same small ivory-stone villas on left and right, same pergola, same sun loungers and towels, same two palms, same warm round lamps and amber interior lighting, same infinity pool, distant island silhouettes and navy-blue dusk with peach horizon. Preserve this specific resort identity, photographic style and material textures; do not replace it with another resort, add floors, balconies, buildings, people, text, logos or watermarks. Fit BOTH recognizable villas and pool into the portrait composition so they remain visible on a narrow screen; do not just crop the center into sky and sea. Less empty sky than the source: the roof of the left villa should begin at about 24 percent down, horizon about 45 percent down, pool lower 45 percent. Retain dark clear navy sky near the top and center for white header and headline. Continue the existing pool water naturally toward the bottom. The result should clearly look like the same existing desktop photograph made vertical, not a new hotel image.
+
 - Point bleu avant le titre supprimé.
 - Curseur blanc unique glissant entre Vols et Hébergement (580 ms), avec sens inversé en arabe.
 - Fond distinct par service et fondu de 850 ms, léger mouvement du fond sur 1 400 ms.
