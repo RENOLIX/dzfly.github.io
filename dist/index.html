@@ -11,7 +11,8 @@
   <link rel="preload" href="assets/hero-stays.webp" as="image" media="(min-width:761px)">
   <link rel="preload" href="assets/hero-stays-mobile.webp" as="image" media="(max-width:760px)">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="motion.css?v=20261107-windows">
+  <link rel="stylesheet" href="motion.css?v=20261107-takeoff">
+  <link rel="stylesheet" href="takeoff.css?v=20261107-takeoff">
 </head>
 <body>
   <a class="skip-link" href="#search">Aller à la recherche</a>
@@ -82,13 +83,40 @@
       <div class="journey-intro"><p class="eyebrow dark" data-t="madeForYou">PENSÉ POUR VOS VOYAGES</p><h2 data-t="journeyTitle">Moins de complications.<br>Plus de destinations.</h2><p data-t="journeySub">Un parcours simple pour préparer votre prochain départ, à votre rythme.</p><button class="text-link" data-action="how"><span data-t="how">Comment ça marche</span><span data-icon="arrow"></span></button></div>
       <div class="benefits"><article><span class="benefit-icon" data-icon="search"></span><div><h3 data-t="compareTitle">Tout commence par une envie</h3><p data-t="compareSub">Choisissez votre destination, vos dates et les options qui comptent pour vous.</p></div><span class="benefit-number">01</span></article><article><span class="benefit-icon" data-icon="wallet"></span><div><h3 data-t="payTitle">Le choix, jusqu’au paiement</h3><p data-t="paySub">Découvrez le parcours CIB, Edahabia ou espèces, prévu pour le lancement.</p></div><span class="benefit-number">02</span></article><article><span class="benefit-icon" data-icon="ticket"></span><div><h3 data-t="tripTitle">Votre voyage à portée de main</h3><p data-t="tripSub">Enregistrez vos itinéraires et retrouvez-les dans votre espace Mes voyages.</p></div><span class="benefit-number">03</span></article></div>
     </section>
-    <section class="invitation wrap"><div><span class="eyebrow" data-t="signature">DZ FLY · DEPUIS L’ALGÉRIE</span><h2 data-t="invitationTitle">Le plus beau voyage ?<br>Celui qui vous ressemble.</h2><a class="primary-button light" href="#search"><span data-t="prepare">Préparer mon voyage</span><span data-icon="arrow"></span></a></div><span class="invitation-plane" data-icon="plane"></span><div class="flight-trail" aria-hidden="true"></div></section>
+    <section class="invitation takeoff wrap" id="takeoff" aria-labelledby="takeoff-title">
+      <div class="takeoff-copy">
+        <p class="eyebrow" data-t="signature">DZ FLY · DEPUIS L’ALGÉRIE</p>
+        <h2 id="takeoff-title" data-t="takeoffTitle">Prêt à changer<br><em>d’horizon ?</em></h2>
+        <p class="takeoff-description" data-t="takeoffDescription">Choisissez votre destination, trouvez votre vol et préparez votre prochaine aventure depuis l’Algérie avec DZ FLY.</p>
+        <div class="takeoff-actions"><a class="primary-button" href="#search"><span data-t="allDestinations">Trouver mon vol</span><span data-icon="arrow"></span></a><a class="takeoff-secondary" href="#destinations" data-t="takeoffExplore">Nos destinations</a></div>
+        <span class="takeoff-signature" data-t="takeoffSignature">D’ici, vers tous vos ailleurs.</span>
+      </div>
+      <div class="takeoff-scene" aria-hidden="true">
+        <div class="takeoff-sky"></div>
+        <div class="takeoff-flight">
+          <svg class="takeoff-contrails" viewBox="0 0 1200 400" preserveAspectRatio="none" fill="none">
+            <defs>
+              <linearGradient id="vapor-fade"><stop stop-color="white" stop-opacity=".2"/><stop offset=".12" stop-color="white"/><stop offset=".82" stop-color="white" stop-opacity=".9"/><stop offset="1" stop-color="white" stop-opacity="0"/></linearGradient>
+              <linearGradient id="vapor-volume" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff" stop-opacity=".6"/><stop offset=".45" stop-color="#fff"/><stop offset="1" stop-color="#d6e7f0" stop-opacity=".65"/></linearGradient>
+              <clipPath id="vapor-shape"><path d="M0 139C180 137 470 103 1200 65V201C470 180 180 151 0 148Z M0 251C180 254 470 270 1200 280V395C470 321 180 271 0 260Z"/></clipPath>
+              <mask id="vapor-mask"><rect width="1200" height="400" fill="url(#vapor-fade)"/></mask>
+              <filter id="vapor-soft" x="-5%" y="-20%" width="110%" height="140%"><feTurbulence type="fractalNoise" baseFrequency=".018 .06" numOctaves="2" seed="9" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="13" xChannelSelector="R" yChannelSelector="G"/><feGaussianBlur stdDeviation="1.3"/></filter>
+              <pattern id="vapor-puffs" width="450" height="400" patternUnits="userSpaceOnUse"><image href="assets/takeoff-clouds.webp" x="0" y="50" width="450" height="170" preserveAspectRatio="none"/><image href="assets/takeoff-clouds.webp" x="0" y="225" width="450" height="190" preserveAspectRatio="none"/></pattern>
+            </defs>
+            <g mask="url(#vapor-mask)" filter="url(#vapor-soft)"><g clip-path="url(#vapor-shape)"><rect width="1200" height="400" fill="url(#vapor-volume)" opacity=".12"/><g class="takeoff-vapor-flow"><rect x="-450" width="1800" height="400" fill="url(#vapor-puffs)"/></g></g></g>
+          </svg>
+          <img class="takeoff-aircraft" src="assets/takeoff-plane.webp" alt="" width="900" height="900" loading="lazy" decoding="async">
+        </div>
+        <span class="takeoff-wordmark">DZ FLY</span>
+        <div class="takeoff-clouds takeoff-clouds-back"></div><div class="takeoff-clouds takeoff-clouds-front"></div>
+      </div>
+    </section>
     <section class="faq wrap" id="faq"><div><p class="eyebrow dark" data-t="faqLabel">ON VOUS ACCOMPAGNE</p><h2 data-t="faqTitle">Avant de décoller.</h2></div><div id="faq-list"></div></section>
   </main>
   <footer><div class="wrap footer-top"><div class="footer-brand"><img src="assets/logo-original.png" alt="DZ FLY — Votre voyage, en Algérie et partout ailleurs" width="1448" height="1086"><p data-t="footerTag">Votre voyage, en Algérie<br>et partout ailleurs.</p></div><div><h3 data-t="explore">Explorer</h3><a href="#search" data-t="flights">Vols</a><button data-service="stays" data-t="stays">Hébergement</button><a href="#destinations" data-t="destinations">Destinations</a></div><div><h3 data-t="useful">À vos côtés</h3><button data-action="trips" data-t="myTrips">Mes voyages</button><a href="#faq" data-t="questions">Questions fréquentes</a><button data-action="help" data-t="help">Centre d’aide</button></div><div><h3 data-t="about">À propos de DZ FLY</h3><button data-action="privacy" data-t="privacy">Confidentialité</button><button data-action="terms" data-t="terms">Conditions d’utilisation</button><span class="made-in"><span class="flag-dot"></span> Made in Algeria</span></div></div><div class="wrap footer-bottom"><span>© <span id="year"></span> DZ FLY</span><span data-t="demoFooter">Version découverte · Aucun billet émis, aucun paiement encaissé.</span></div></footer>
   <button class="help-fab" data-action="help"><span data-icon="headphones"></span><span data-t="needHelp">Besoin d’aide ?</span></button>
   <dialog id="dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
   <div id="toast" class="toast" role="status" hidden></div>
-  <script type="module" src="app.js?v=20261107-windows"></script>
+  <script type="module" src="app.js?v=20261107-takeoff"></script>
 </body>
 </html>

@@ -1,0 +1,69 @@
+/* The copy stays clear while a separate aircraft crosses the sky on scroll. */
+.invitation.takeoff{--aircraft-size:clamp(350px,34vw,445px);display:grid;grid-template-columns:43% 57%;min-height:448px;padding:0;background:#fbfcfe;color:var(--navy);border:1px solid #e6edf3;border-radius:24px;direction:ltr;isolation:isolate}
+.takeoff:after{display:none}
+.takeoff-copy{position:relative;z-index:4;padding:44px 20px 37px 45px;align-self:center;pointer-events:none}
+.takeoff-copy .eyebrow{color:#5e8099;font-size:8px;letter-spacing:1.9px}
+.takeoff-copy h2{font-size:36px;line-height:1.2;font-weight:750;letter-spacing:-1.3px;margin-block:18px 16px}
+.takeoff-copy h2 em{font-style:normal;color:#159bc6}
+.takeoff-description{max-width:318px;font-size:12px;line-height:1.9;color:#6b7f90}
+.takeoff-actions{display:flex;align-items:center;flex-wrap:wrap;gap:16px;margin-top:25px;pointer-events:auto}
+.takeoff-actions .primary-button{min-height:44px;border-radius:30px;padding:12px 19px;font-size:11px;box-shadow:0 4px 12px #00a4cf24}
+.takeoff-actions .primary-button svg{width:16px;height:16px}
+.takeoff-secondary{font-size:10px;font-weight:650;color:var(--navy);padding-block:10px;border-bottom:1px solid #a8becd;transition:color 200ms,border-color 200ms}
+.takeoff-secondary:hover{color:#009fcf;border-color:#009fcf}
+.takeoff-signature{display:block;margin-top:29px;font-size:9px;letter-spacing:.3px;color:#8b9aa7}
+.takeoff-scene{position:absolute;z-index:1;inset:0;overflow:hidden;pointer-events:none;direction:ltr}
+.takeoff-sky{position:absolute;inset:0 0 0 43%;background:radial-gradient(ellipse at 64% 20%,#3a7d9f88,transparent 64%),linear-gradient(140deg,#155877,#144b6c 55%,#0b304e)}
+.takeoff-sky:before{content:'';position:absolute;inset:0 auto 0 -1px;width:74px;background:linear-gradient(90deg,#fbfcfe,transparent)}
+.takeoff-flight{position:absolute;z-index:2;left:43%;top:50%;width:var(--aircraft-size);height:var(--aircraft-size);transform:translate3d(calc(var(--takeoff-x,0px) - 24px),-50%,0);will-change:transform}
+.takeoff-aircraft{position:relative;z-index:2;display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 9px 7px #062b4833)}
+.takeoff-contrails{position:absolute;z-index:1;left:42.5%;top:0;width:300%;height:100%;overflow:visible}
+.takeoff-vapor-flow{animation:takeoff-vapor 5.5s linear infinite;animation-play-state:paused;will-change:transform}
+.takeoff.is-in-view .takeoff-vapor-flow{animation-play-state:running}
+.takeoff-wordmark{position:absolute;z-index:3;bottom:22px;right:36px;font-family:var(--heading);font-size:72px;font-weight:800;letter-spacing:7px;line-height:1;color:#fff;opacity:.14;white-space:nowrap}
+.takeoff-clouds{position:absolute;z-index:3;bottom:-95px;right:-9%;width:72%;height:190px;opacity:.98;background:url('assets/takeoff-clouds.webp') center/100% 100% no-repeat;mask-image:linear-gradient(90deg,transparent,#000 13%);animation:takeoff-cloud-drift 15s ease-in-out infinite alternate;animation-play-state:paused}
+.takeoff-clouds-back{z-index:1;bottom:-55px;right:-13%;opacity:.67;filter:blur(1px);transform:scale(.94);animation-delay:-8s}
+.takeoff-clouds-front:after{content:'';position:absolute;inset:118px 0 0;background:linear-gradient(transparent,#fbfcfe 70%)}
+.takeoff.is-in-view .takeoff-clouds{animation-play-state:running}
+html[dir=rtl] .takeoff-copy{direction:rtl;text-align:right}
+html[dir=rtl] .takeoff-copy h2{letter-spacing:0;line-height:1.5}
+@keyframes takeoff-vapor{from{transform:translateX(0)}to{transform:translateX(450px)}}
+@keyframes takeoff-cloud-drift{from{translate:-10px 0}to{translate:16px -5px}}
+@media(min-width:851px) and (max-width:1100px){
+ .takeoff-copy{padding:34px 15px 30px 30px}
+ .takeoff-copy h2{font-size:31px}
+ .takeoff-actions{gap:12px;margin-top:20px}
+ .takeoff-actions .primary-button{padding-inline:15px;font-size:10px}
+ .takeoff-secondary{font-size:9px}
+ .takeoff-description{font-size:11px}
+ .takeoff-wordmark{font-size:60px}
+}
+@media(max-width:850px){
+ .invitation.takeoff{--aircraft-size:min(340px,calc(100vw - 68px));display:block;min-height:0;border-radius:20px}
+ .takeoff-copy{padding:30px 27px 22px;max-width:540px;pointer-events:auto}
+ .takeoff-copy h2{font-size:32px;max-width:none;margin-block:15px 13px}
+ .takeoff-copy .eyebrow{font-size:7px;letter-spacing:1.5px}
+ .takeoff-description{max-width:410px;font-size:12px;line-height:1.85}
+ .takeoff-actions{margin-top:20px;gap:18px}
+ .takeoff-signature{margin-top:20px;font-size:8px}
+ .takeoff-scene{position:relative;inset:auto;height:326px;isolation:isolate}
+ .takeoff-sky{inset:0;background:radial-gradient(ellipse at 75% 15%,#3b84a3bb,transparent 68%),linear-gradient(130deg,#175976,#0a3455)}
+ .takeoff-sky:before{inset:-1px 0 auto;width:auto;height:38px;background:linear-gradient(#fbfcfe,transparent)}
+ .takeoff-flight{left:50%;margin-left:calc(var(--aircraft-size) * -.5);top:50%;transform:translate3d(var(--takeoff-x,0px),-50%,0)}
+ .takeoff-wordmark{bottom:21px;right:24px;font-size:53px;letter-spacing:5px;opacity:.17}
+ .takeoff-clouds{width:150%;right:-19%;bottom:-90px;height:175px}
+ .takeoff-clouds-back{bottom:-57px;right:-23%}
+}
+@media(max-width:370px){
+ .invitation.takeoff{--aircraft-size:min(305px,calc(100vw - 68px))}
+ .takeoff-copy{padding:27px 22px 20px}
+ .takeoff-copy h2{font-size:29px}
+ .takeoff-description{font-size:11px}
+ .takeoff-actions{gap:13px}
+ .takeoff-secondary{font-size:9px}
+ .takeoff-scene{height:300px}
+}
+@media(prefers-reduced-motion:reduce){
+ .takeoff-flight{--takeoff-x:0px!important;will-change:auto}
+ .takeoff-vapor-flow,.takeoff-clouds{animation:none;will-change:auto}
+}

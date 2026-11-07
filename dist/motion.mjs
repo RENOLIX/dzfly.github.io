@@ -89,3 +89,44 @@ if(destinationGrid){
   new ResizeObserver(requestWindowFrame).observe(document.body);
   requestWindowFrame();
 }
+
+// The aircraft travels from right to left as the invitation enters the viewport.
+const takeoff=document.querySelector('.takeoff');
+if(takeoff){
+  const scene=takeoff.querySelector('.takeoff-scene');
+  const flight=takeoff.querySelector('.takeoff-flight');
+  let flightFrame=0;
+  let flightProgress=null;
+  let flightTime=0;
+  function drawFlight(time){
+    flightFrame=0;
+    const rect=scene.getBoundingClientRect();
+    const viewportHeight=document.documentElement.clientHeight;
+    const target=reducedMotion.matches?1:Math.min(1,Math.max(0,
+      (viewportHeight*.97-rect.top)/(viewportHeight*.55)
+    ));
+    const elapsed=flightTime?Math.min(time-flightTime,64):16.67;
+    flightTime=time;
+    flightProgress=flightProgress===null||reducedMotion.matches?target:flightProgress+(target-flightProgress)*(1-Math.exp(-elapsed/85));
+    const moving=Math.abs(target-flightProgress)>.0005;
+    if(!moving)flightProgress=target;
+    flight.style.setProperty('--takeoff-x',((1-flightProgress)*Math.max(320,rect.width*.56)).toFixed(2)+'px');
+    if(moving)flightFrame=requestAnimationFrame(drawFlight);
+    else flightTime=0;
+  }
+  function requestFlightFrame(){if(!flightFrame)flightFrame=requestAnimationFrame(drawFlight);}
+  new IntersectionObserver(([entry])=>{
+    takeoff.classList.toggle('is-in-view',entry.isIntersecting&&!reducedMotion.matches);
+    requestFlightFrame();
+  },{rootMargin:'40px'}).observe(takeoff);
+  reducedMotion.addEventListener('change',()=>{
+    const rect=takeoff.getBoundingClientRect();
+    takeoff.classList.toggle('is-in-view',!reducedMotion.matches&&rect.bottom>0&&rect.top<innerHeight);
+    requestFlightFrame();
+  });
+  addEventListener('scroll',requestFlightFrame,{passive:true});
+  addEventListener('resize',requestFlightFrame,{passive:true});
+  addEventListener('pageshow',requestFlightFrame);
+  new ResizeObserver(requestFlightFrame).observe(document.body);
+  requestFlightFrame();
+}
