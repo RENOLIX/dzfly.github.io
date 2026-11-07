@@ -1,5 +1,5 @@
 import {airports,airport,todayISO,dateAfter,validateSearch,demoOffers,totalFare,normalizeSearch} from './domain.mjs';
-import {scrollToElement,animateSearchFields,settleScroll} from './motion.mjs';
+import {scrollToElement,animateSearchFields,settleScroll} from './motion.mjs?v=20261107-windows';
 const $=(s,r=document)=>r.querySelector(s);
 const $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));

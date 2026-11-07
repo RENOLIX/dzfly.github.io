@@ -87,6 +87,8 @@ Ajouter la base de données, l’authentification, l’administration, la gestio
 
 ## Images
 
+Les quatre destinations utilisent un cadre de hublot dessiné en CSS à partir de la référence du client. Le volet et sa poignée se lèvent progressivement au défilement et se referment en remontant. Les cartes d’une même rangée restent synchronisées (4 sur ordinateur, 2 par rangée sur téléphone). Les photos et les liens de destination sont conservés. Avec la préférence système de réduction des animations, les hublots restent ouverts ; ils sont également ouverts si JavaScript est désactivé.
+
 Logo : fichier fourni par le client, copié dans `dist/assets/logo-original.png`, sans retouche.
 
 Hero : générateur d’images intégré Imagegen (pas de CLI), sortie conservée dans `dist/assets/hero-sky.png` et version WebP optimisée `dist/assets/hero-sky.webp`.

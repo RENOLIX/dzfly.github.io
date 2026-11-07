@@ -33,6 +33,32 @@ html.lenis,html.lenis body{height:auto}
 .lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
 .lenis.lenis-stopped{overflow:hidden}
 dialog,.airport-list{overscroll-behavior:contain}
+/* Sculpted aircraft windows. The shade moves inside the opening, behind the rim. */
+.destination-grid{gap:30px;align-items:start}
+.destination{display:block;height:auto;overflow:visible;border-radius:0;padding:0 4px 8px;background:transparent;color:var(--navy);isolation:auto}
+.destination:after{display:none}
+.destination-window{position:relative;display:block;aspect-ratio:0.735;border-radius:48% 48% 46% 46% / 34% 34% 35% 35%;background:linear-gradient(130deg,#fff 2%,#fafbfc 15%,#c7c9cd 35%,#e9eaed 57%,#fff 78%,#c3c6cc 100%);box-shadow:inset 2px 3px 4px #fff,inset -2px -3px 5px #8c929a55,0 12px 20px -16px #14294470,0 1px 2px #3a465f22}
+.destination-window:before{content:'';position:absolute;inset:3px;border-radius:inherit;background:linear-gradient(142deg,#fff 4%,#f7f8fa 16%,#c2c5cb 37%,#e1e3e8 58%,#fff 78%,#e8e9ed 92%);box-shadow:inset 0 1px 2px #fff}
+.window-liner{position:absolute;inset:10.8% 11.5% 10.2%;display:block;border-radius:47% 47% 45% 45% / 32% 32% 34% 34%;background:linear-gradient(145deg,#90949a 3%,#a7abb1 20%,#e3e5e9 48%,#fff 72%,#b1b6bd 100%);box-shadow:0 -4px 8px #777d865c,0 3px 6px #fff,inset 0 0 4px #777d8680}
+.window-view{position:absolute;inset:5.5% 6.5% 5%;display:block;overflow:hidden;border-radius:46% 46% 44% 44% / 31% 31% 33% 33%;background:#b7bec6;isolation:isolate;box-shadow:0 0 1px 1px #747c8866}
+.window-view:after{content:'';position:absolute;z-index:2;inset:0;pointer-events:none;border-radius:inherit;box-shadow:inset 0 5px 10px #15243c55,inset 0 -2px 4px #fff8;background:linear-gradient(115deg,#fff1,transparent 40%,#fff0 65%,#fff2)}
+.destination .window-view img{z-index:0;border-radius:inherit;object-position:center;transform:scale(1.025);transition:transform 800ms cubic-bezier(.22,1,.36,1)}
+.destination:hover .window-view img{transform:scale(1.07)}
+.window-shade{position:absolute;z-index:1;inset:-2% -1% 0;display:block;border-radius:0 0 46% 46% / 0 0 6% 6%;background:radial-gradient(ellipse at 65% 32%,#e3e4e6 0%,#c8cace 48%,#a4a8ad 100%);box-shadow:inset 3px 0 8px #626a7470,inset -2px 0 6px #626a7440,inset 0 -2px 2px #fafbfc,0 5px 5px #17263970;transform:translate3d(0,calc(var(--window-open,1) * -103%),0)}
+.window-handle{position:absolute;inset-inline:31%;bottom:5.5%;height:2.7%;min-height:4px;border-radius:50% / 48%;background:linear-gradient(#fff 0%,#e2e3e5 32%,#95999f 72%,#f7f8fa 100%);box-shadow:0 3px 3px #2d333a55,0 -1px 1px #fff7}
+.destination-bottom{position:relative;inset:auto;align-items:center;margin:20px 8px 0;gap:8px}
+.destination-bottom small{color:#7e8c9a;font-size:8px;letter-spacing:1.5px;line-height:1.5;margin-bottom:3px}
+.destination-bottom strong{font-size:25px;line-height:1.35}
+.destination .circle-arrow{width:32px;height:32px;border-color:#ccd8e3;color:var(--navy);flex-shrink:0;transition:background 200ms,color 200ms,border-color 200ms}
+.destination:hover .circle-arrow{background:var(--navy);border-color:var(--navy);color:#fff}
+.destination-chip{position:relative;display:block;inset:auto;margin:5px 8px 0;padding:0;max-width:none;border-radius:0;background:none;backdrop-filter:none;color:#738699;font-size:10px;font-weight:450;line-height:1.6}
+.destination:focus-visible{outline:2px solid var(--cyan);outline-offset:8px;border-radius:10px}
+@media(max-width:1100px) and (min-width:761px){
+ .destination-grid{gap:20px}
+ .destination-bottom{margin:16px 4px 0}
+ .destination-bottom strong{font-size:23px}
+ .destination-chip{margin-inline:4px;font-size:9px}
+}
 @media(max-width:1100px) and (min-width:761px){
  .hero[data-mode=stays] .search-fields{grid-template-columns:repeat(3,minmax(0,1fr))}
  .hero[data-mode=stays] .destination-field{grid-column:1}
@@ -50,5 +76,13 @@ dialog,.airport-list{overscroll-behavior:contain}
  .hero[data-mode=stays] .search-top{margin-block:8px 5px}
  .hero-backdrop{background-position:40% center}
  .hero-backdrop-stays{background-image:url('assets/hero-stays-mobile.webp');background-position:center center}
+ .destination-grid{gap:27px 20px}
+ .destination{height:auto;padding:0 2px 5px;border-radius:0}
+ .destination-bottom{inset:auto;margin:14px 2px 0;gap:5px}
+ .destination-bottom strong{font-size:21px}
+ .destination-bottom small{font-size:6.5px;letter-spacing:.7px;max-width:none;min-height:10px}
+ .destination .circle-arrow{width:25px;height:25px}
+ .destination-chip{inset:auto;margin:3px 2px 0;padding:0;font-size:8px;max-width:none}
 }
+@media(max-width:370px){.destination-grid{gap:24px 14px}.destination-bottom strong{font-size:19px}.destination .circle-arrow{width:23px;height:23px}}
 @media(prefers-reduced-motion:reduce){.hero-backdrop,.service-tabs:before{transition:none;transform:none}.hero[data-mode=stays] .service-tabs:before{transform:translateX(100%)}html[dir=rtl] .hero[data-mode=stays] .service-tabs:before{transform:translateX(-100%)}}

@@ -51,3 +51,41 @@ export function animateSearchFields(element){
     {duration:420,easing:'cubic-bezier(.22,1,.36,1)'}
   );
 }
+
+// Scroll-linked, reversible shades. Cards in the same row share their progress.
+// Native touch scrolling and Lenis both emit scroll events; no scroll hijacking.
+const destinationGrid=document.querySelector('.destination-grid');
+if(destinationGrid){
+  const windows=[...destinationGrid.querySelectorAll('.destination-window')].map(element=>({element,progress:null}));
+  let frame=0;
+  let previousTime=0;
+  const clamp=value=>Math.min(1,Math.max(0,value));
+  function drawWindows(time){
+    frame=0;
+    const elapsed=previousTime?Math.min(time-previousTime,64):16.67;
+    previousTime=time;
+    const blend=1-Math.exp(-elapsed/70);
+    const viewportHeight=document.documentElement.clientHeight;
+    // Read all geometry before applying transforms, avoiding layout thrashing.
+    const targets=windows.map(({element})=>reducedMotion.matches?1:clamp(
+      (viewportHeight*.94-element.getBoundingClientRect().top)/(viewportHeight*.66)
+    ));
+    let moving=false;
+    windows.forEach((window,index)=>{
+      const target=targets[index];
+      window.progress=window.progress===null||reducedMotion.matches?target:window.progress+(target-window.progress)*blend;
+      if(Math.abs(target-window.progress)<.0005)window.progress=target;
+      else moving=true;
+      window.element.style.setProperty('--window-open',window.progress.toFixed(5));
+    });
+    if(moving)frame=requestAnimationFrame(drawWindows);
+    else previousTime=0;
+  }
+  function requestWindowFrame(){if(!frame)frame=requestAnimationFrame(drawWindows);}
+  addEventListener('scroll',requestWindowFrame,{passive:true});
+  addEventListener('resize',requestWindowFrame,{passive:true});
+  addEventListener('pageshow',requestWindowFrame);
+  reducedMotion.addEventListener('change',requestWindowFrame);
+  new ResizeObserver(requestWindowFrame).observe(document.body);
+  requestWindowFrame();
+}
