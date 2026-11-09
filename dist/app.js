@@ -22,6 +22,9 @@ const featuredDestinationText={
   DOH:[["Qatar","Doha","Sur la corniche"],["Qatar","Doha","Along the Corniche"],["قطر","الدوحة","على الكورنيش"]],
   CAI:[["Égypte","Le Caire","Les pyramides de Gizeh"],["Egypt","Cairo","The Pyramids of Giza"],["مصر","القاهرة","أهرامات الجيزة"]],
 };
+Object.assign(fr,{drawerTitle:'Votre espace voyage',drawerOpen:'Ouvrir le menu',drawerClose:'Fermer le menu',drawerFlights:'Trouver votre prochain vol',drawerStays:'Préparer votre séjour',drawerDestinations:'Des idées pour votre prochain départ',drawerLanguage:'Langue'});
+Object.assign(en,{drawerTitle:'Your travel space',drawerOpen:'Open the menu',drawerClose:'Close the menu',drawerFlights:'Find your next flight',drawerStays:'Plan your stay',drawerDestinations:'Ideas for your next departure',drawerLanguage:'Language'});
+Object.assign(ar,{drawerTitle:'مساحتك للسفر',drawerOpen:'فتح القائمة',drawerClose:'إغلاق القائمة',drawerFlights:'ابحث عن رحلتك القادمة',drawerStays:'خطّط لإقامتك',drawerDestinations:'أفكار لرحلتك القادمة',drawerLanguage:'اللغة'});
 const dictionaries={fr,en,ar};
 for(const [code,translations] of Object.entries(featuredDestinationText)){
   Object.values(dictionaries).forEach((dictionary,index)=>{
@@ -58,6 +61,7 @@ function renderFields(){
 function applyLanguage(){
  document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';
  $$('[data-t]').forEach(e=>e.innerHTML=t(e.dataset.t));$('#language-code').textContent=lang==='ar'?'ع':lang.toUpperCase();
+ syncDrawer();
  renderFields();renderFAQs();if(searched)renderResults();paintIcons();updateCount();
 }
 function renderFAQs(){
@@ -84,6 +88,7 @@ function setService(service){
  settleScroll();
  state.service=service;
  $$('[data-service]').forEach(b=>{const active=b.dataset.service===service;b.classList.toggle('active',active);b.classList.toggle('is-active',active);if(b.getAttribute('role')==='tab')b.setAttribute('aria-selected',String(active));});
+ syncDrawer();
  $('#search-error').hidden=true;renderFields();animateSearchFields($('#search-fields'));
  if(searched){$('#results').hidden=true;searched=null;}
 }
@@ -93,6 +98,39 @@ function showDialog(title,body,kind='info'){
  if(!d.open)d.showModal();paintIcons(d);const field=$('input:not([type=radio]),select',d);if(field)field.focus();
 }
 function closeDialog(){const d=$('#dialog');if(d.open)d.close();}
+const drawer=$('#menu-drawer'),drawerTrigger=$('#menu-trigger');
+function syncDrawer(){
+ drawerTrigger.setAttribute('aria-label',t('drawerOpen'));
+ $('#menu-close').setAttribute('aria-label',t('drawerClose'));
+ $$('[data-lang]',drawer).forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.lang===lang)));
+ $$('[data-service]',drawer).forEach(button=>{
+   if(button.dataset.service===state.service)button.setAttribute('aria-current','true');
+   else button.removeAttribute('aria-current');
+ });
+}
+function openDrawer(){
+ if(drawer.open)return;
+ settleScroll();
+ drawer.showModal();
+ drawerTrigger.setAttribute('aria-expanded','true');
+}
+function closeDrawer(){
+ if(!drawer.open)return;
+ drawer.close();
+ drawerTrigger.setAttribute('aria-expanded','false');
+}
+drawer.addEventListener('cancel',e=>{e.preventDefault();closeDrawer();});
+drawer.addEventListener('click',e=>{
+ if(e.target===drawer){
+   const r=drawer.getBoundingClientRect();
+   if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closeDrawer();
+   return;
+ }
+ const b=e.target.closest('button,a');
+ if(!b)return;
+ if(b.matches('a')&&(e.ctrlKey||e.metaKey||e.altKey||e.shiftKey))return;
+ if(b.matches('a,[data-service],[data-action="help"],[data-action="trips"]'))closeDrawer();
+});
 $('#dialog').addEventListener('close',()=>{if(focusBeforeDialog?.isConnected)focusBeforeDialog.focus();});
 $('#dialog').addEventListener('click',e=>{if(e.target===$('#dialog')){const r=e.target.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closeDialog();}});
 function airportDialog(field){
@@ -128,7 +166,7 @@ function prepareOffer(id){
  $('#draft-form').addEventListener('submit',e=>{e.preventDefault();lastDraft.name=$('#trip-name').value.trim();lastDraft.payment=$('input[name="payment"]:checked').value;trips.unshift(lastDraft);trips=trips.slice(0,30);let ok=true;try{localStorage.setItem('dzfly-trips',JSON.stringify(trips));}catch{ok=false;}updateCount();showDialog(t('savedTitle'),`<p class="dialog-intro">${ok?t('savedBody'):t('saveFailed')}</p>${summary(lastDraft.search,lastDraft.offer)}<button class="primary-button full-width" data-action="trips">${t('viewTrips')}${icon('arrow')}</button><div class="dialog-footer"><button class="text-link" data-export="${lastDraft.id}">${t('download')}${icon('arrow')}</button></div>`,'saved');});
 }
 function updateCount(){const c=$('.trip-count');c.textContent=trips.length;c.hidden=!trips.length;}
-function showTrips(){showDialog(t('myTrips'),trips.length?`<p class="dialog-intro">${t('savedOnly')}</p>${trips.map(d=>`<article class="saved-trip"><div class="saved-trip-top"><h3>${esc(d.name||`${airport(d.search.origin).city} → ${airport(d.search.destination).city}`)}</h3><span class="status-pill">${t('draft')}</span></div><p>${esc(d.id)} · ${dateLabel(d.search.departure)}</p><p>${pax(d.search)} ${t(pax(s)===1?'traveler':'travelersPlural')} · ${t(d.payment||'card')}</p><div class="saved-trip-actions"><button data-export="${esc(d.id)}">${t('download')}</button><button data-remove="${esc(d.id)}">${t('remove')}</button></div></article>`).join('')}`:`<div class="empty-state">${icon('ticket')}<h3>${t('emptyTrips')}</h3><p>${t('emptyTripsSub')}</p><button class="primary-button" data-action="explore">${t('start')}${icon('arrow')}</button></div>`,'trips');}
+function showTrips(){showDialog(t('myTrips'),trips.length?`<p class="dialog-intro">${t('savedOnly')}</p>${trips.map(d=>`<article class="saved-trip"><div class="saved-trip-top"><h3>${esc(d.name||`${airport(d.search.origin).city} → ${airport(d.search.destination).city}`)}</h3><span class="status-pill">${t('draft')}</span></div><p>${esc(d.id)} · ${dateLabel(d.search.departure)}</p><p>${pax(d.search)} ${t(pax(d.search)===1?'traveler':'travelersPlural')} · ${t(d.payment||'card')}</p><div class="saved-trip-actions"><button data-export="${esc(d.id)}">${t('download')}</button><button data-remove="${esc(d.id)}">${t('remove')}</button></div></article>`).join('')}`:`<div class="empty-state">${icon('ticket')}<h3>${t('emptyTrips')}</h3><p>${t('emptyTripsSub')}</p><button class="primary-button" data-action="explore">${t('start')}${icon('arrow')}</button></div>`,'trips');}
 function exportTrip(id){const d=trips.find(x=>x.id===id);if(!d)return;const s=d.search;const hotel=s.service==='stays';const text=[t('exportTitle'),'',t('exportDisclaimer'),'',d.name||'',d.id,hotel?airport(s.destination).city:`${airport(s.origin).city} → ${airport(s.destination).city}`,`${t('dates')}: ${s.departure}${s.trip==='round'||hotel?' / '+s.returnDate:''}`,s.trip==='multi'&&!hotel?`${airport(s.legOrigin).city} → ${airport(s.legDestination).city} / ${s.legDate}`:'',`${t('travelers')}: ${pax(s)}`,`${t('total')}: ${money(hotel?d.offer.price*nights(s)*s.rooms:totalFare(d.offer,s))}`,`${t('payment')}: ${t(d.payment)}`].filter(x=>x!==undefined).join('\n');const url=URL.createObjectURL(new Blob(['\uFEFF'+text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=`DZ-FLY-${d.id}.txt`;a.click();setTimeout(()=>URL.revokeObjectURL(url),5000);}
 let toastTimer;function toast(text){clearTimeout(toastTimer);$('#toast').textContent=text;$('#toast').hidden=false;toastTimer=setTimeout(()=>$('#toast').hidden=true,3500);}
 document.addEventListener('change',e=>{
@@ -168,7 +206,8 @@ document.addEventListener('click',e=>{
  if(action==='privacy')showDialog(t('privacy'),`<div class="info-block">${t('privacyBody')}</div>`);
  if(action==='terms')showDialog(t('terms'),`<div class="info-block">${t('termsBody')}</div>`);
  if(action==='language')showDialog(t('language'),['fr','en','ar'].map(l=>`<button class="language-option ${l===lang?'active':''}" data-lang="${l}"><span>${{fr:'Français',en:'English',ar:'العربية'}[l]}</span><span>${l===lang?icon('check'):l.toUpperCase()}</span></button>`).join(''),'language');
- if(action==='menu')showDialog('DZ FLY',`<nav class="menu-links" aria-label="Menu"><button data-service="flights">${icon('plane')}${t('flights')}</button><button data-service="stays">${icon('bed')}${t('stays')}</button><button data-action="trips">${icon('ticket')}${t('myTrips')}</button><button data-action="faq">${icon('headphones')}${t('questions')}</button><button data-action="language">${icon('globe')}${t('language')}</button></nav>`,'menu');
+ if(action==='menu')openDrawer();
+ if(action==='close-menu')closeDrawer();
 });
 $('#year').textContent=new Date().getFullYear();
 const params=new URLSearchParams(location.search);if(params.has('destination')){

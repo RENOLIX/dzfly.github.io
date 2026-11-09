@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="motion.css?v=20261109-destinations">
   <link rel="stylesheet" href="takeoff.css?v=20261107-takeoff">
+  <link rel="stylesheet" href="drawer.css?v=20261109-menu">
 </head>
 <body>
   <a class="skip-link" href="#search">Aller à la recherche</a>
@@ -28,7 +29,7 @@
       <div class="header-actions">
         <button class="glass-button my-trips" data-action="trips"><span data-icon="ticket"></span><span data-t="myTrips">Mes voyages</span><span class="trip-count" hidden>0</span></button>
         <button class="glass-button language" data-action="language" aria-label="Changer de langue"><span data-icon="globe"></span><span id="language-code">FR</span></button>
-        <button class="glass-button round" data-action="menu" aria-label="Ouvrir le menu"><span data-icon="menu"></span></button>
+        <button class="glass-button round" id="menu-trigger" type="button" data-action="menu" aria-label="Ouvrir le menu" aria-haspopup="dialog" aria-controls="menu-drawer" aria-expanded="false"><span data-icon="menu"></span></button>
       </div>
     </header>
     <div class="hero-copy wrap">
@@ -129,10 +130,41 @@
     </section>
     <section class="faq wrap" id="faq"><div><p class="eyebrow dark" data-t="faqLabel">ON VOUS ACCOMPAGNE</p><h2 data-t="faqTitle">Avant de décoller.</h2></div><div id="faq-list"></div></section>
   </main>
-  <footer><div class="wrap footer-top"><div class="footer-brand"><img src="assets/logo-original.png" alt="DZ FLY — Votre voyage, en Algérie et partout ailleurs" width="1448" height="1086"><p data-t="footerTag">Votre voyage, en Algérie<br>et partout ailleurs.</p></div><div><h3 data-t="explore">Explorer</h3><a href="#search" data-t="flights">Vols</a><button data-service="stays" data-t="stays">Hébergement</button><a href="#destinations" data-t="destinations">Destinations</a></div><div><h3 data-t="useful">À vos côtés</h3><button data-action="trips" data-t="myTrips">Mes voyages</button><a href="#faq" data-t="questions">Questions fréquentes</a><button data-action="help" data-t="help">Centre d’aide</button></div><div><h3 data-t="about">À propos de DZ FLY</h3><button data-action="privacy" data-t="privacy">Confidentialité</button><button data-action="terms" data-t="terms">Conditions d’utilisation</button><span class="made-in"><span class="flag-dot"></span> Made in Algeria</span></div></div><div class="wrap footer-bottom"><span>© <span id="year"></span> DZ FLY</span><span data-t="demoFooter">Version découverte · Aucun billet émis, aucun paiement encaissé.</span></div></footer>
+  <footer><div class="wrap footer-top"><div class="footer-brand"><img src="assets/logo-original.png" alt="DZ FLY — Votre voyage, en Algérie et partout ailleurs" width="1448" height="1086"><p data-t="footerTag">Votre voyage, en Algérie<br>et partout ailleurs.</p></div><div><h3 data-t="explore">Explorer</h3><a href="#search" data-t="flights">Vols</a><button data-service="stays" data-t="stays">Hébergement</button><a href="#destinations" data-t="destinations">Destinations</a></div><div><h3 data-t="useful">À vos côtés</h3><button data-action="trips" data-t="myTrips">Mes voyages</button><a href="#faq" data-t="questions">Questions fréquentes</a><button data-action="help" data-t="help">Centre d’aide</button></div><div><h3 data-t="about">À propos de DZ FLY</h3><button data-action="privacy" data-t="privacy">Confidentialité</button><button data-action="terms" data-t="terms">Conditions d’utilisation</button></div></div><div class="wrap footer-bottom"><span>© <span id="year"></span> DZ FLY</span><span data-t="demoFooter">Version découverte · Aucun billet émis, aucun paiement encaissé.</span></div></footer>
   <button class="help-fab" data-action="help"><span data-icon="headphones"></span><span data-t="needHelp">Besoin d’aide ?</span></button>
+  <dialog class="menu-drawer" id="menu-drawer" aria-labelledby="menu-drawer-title">
+    <div class="drawer-panel" data-lenis-prevent>
+      <div class="drawer-header">
+        <div class="drawer-top"><img src="assets/logo-original.png" alt="DZ FLY" width="1448" height="1086"><button class="drawer-close" id="menu-close" type="button" data-action="close-menu" aria-label="Fermer le menu" autofocus><span data-icon="close"></span></button></div>
+        <h2 id="menu-drawer-title" data-t="drawerTitle">Votre espace voyage</h2>
+        <p data-t="brandPromise">Votre voyage, tout simplement.</p>
+      </div>
+      <div class="drawer-content">
+        <nav class="drawer-navigation" aria-labelledby="drawer-explore">
+          <h3 class="drawer-label" id="drawer-explore" data-t="explore">Explorer</h3>
+          <button class="drawer-route" type="button" data-service="flights"><span class="drawer-icon" data-icon="plane"></span><span class="drawer-route-copy"><strong data-t="flights">Vols</strong><small data-t="drawerFlights">Trouver votre prochain vol</small></span><span class="drawer-arrow" data-icon="arrow"></span></button>
+          <button class="drawer-route" type="button" data-service="stays"><span class="drawer-icon" data-icon="bed"></span><span class="drawer-route-copy"><strong data-t="stays">Hébergement</strong><small data-t="drawerStays">Préparer votre séjour</small></span><span class="drawer-arrow" data-icon="arrow"></span></button>
+          <a class="drawer-route" href="#destinations"><span class="drawer-icon" data-icon="compass"></span><span class="drawer-route-copy"><strong data-t="destinations">Destinations</strong><small data-t="drawerDestinations">Des idées pour votre prochain départ</small></span><span class="drawer-arrow" data-icon="arrow"></span></a>
+        </nav>
+        <div class="drawer-support" role="group" aria-labelledby="drawer-support-title">
+          <h3 class="drawer-label" id="drawer-support-title" data-t="useful">À vos côtés</h3>
+          <button class="drawer-link" type="button" data-action="trips"><span data-icon="ticket"></span><span data-t="myTrips">Mes voyages</span><span class="drawer-arrow" data-icon="arrow"></span></button>
+          <a class="drawer-link" href="#faq"><span data-icon="search"></span><span data-t="questions">Questions fréquentes</span><span class="drawer-arrow" data-icon="arrow"></span></a>
+          <button class="drawer-link" type="button" data-action="help"><span data-icon="headphones"></span><span data-t="help">Centre d’aide</span><span class="drawer-arrow" data-icon="arrow"></span></button>
+        </div>
+        <div class="drawer-languages" role="group" aria-labelledby="drawer-languages-title">
+          <span id="drawer-languages-title" class="drawer-label"><span data-icon="globe"></span><span data-t="drawerLanguage">Langue</span></span>
+          <div class="drawer-language-options">
+            <button type="button" data-lang="fr" lang="fr" aria-pressed="true">Français</button>
+            <button type="button" data-lang="en" lang="en" aria-pressed="false">English</button>
+            <button type="button" data-lang="ar" lang="ar" aria-pressed="false">العربية</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
   <dialog id="dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
   <div id="toast" class="toast" role="status" hidden></div>
-  <script type="module" src="app.js?v=20261109-destinations"></script>
+  <script type="module" src="app.js?v=20261109-menu"></script>
 </body>
 </html>
