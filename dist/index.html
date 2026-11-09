@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="motion.css?v=20261109-destinations">
   <link rel="stylesheet" href="takeoff.css?v=20261107-takeoff">
-  <link rel="stylesheet" href="drawer.css?v=20261109-menu">
+  <link rel="stylesheet" href="drawer.css?v=20261109-lucide">
 </head>
 <body>
   <a class="skip-link" href="#search">Aller à la recherche</a>
@@ -135,25 +135,50 @@
   <dialog class="menu-drawer" id="menu-drawer" aria-labelledby="menu-drawer-title">
     <div class="drawer-panel" data-lenis-prevent>
       <div class="drawer-header">
-        <div class="drawer-top"><img src="assets/logo-original.png" alt="DZ FLY" width="1448" height="1086"><button class="drawer-close" id="menu-close" type="button" data-action="close-menu" aria-label="Fermer le menu" autofocus><span data-icon="close"></span></button></div>
-        <h2 id="menu-drawer-title" data-t="drawerTitle">Votre espace voyage</h2>
-        <p data-t="brandPromise">Votre voyage, tout simplement.</p>
+        <div class="drawer-top"><img src="assets/logo-original.png" alt="DZ FLY" width="1448" height="1086"><button class="drawer-close" id="menu-close" type="button" data-action="close-menu" aria-label="Fermer le menu" autofocus><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg#x"/></svg></button></div>
+        <h2 id="menu-drawer-title" data-t="drawerTitle">Menu</h2>
       </div>
       <div class="drawer-content">
         <nav class="drawer-navigation" aria-labelledby="drawer-explore">
           <h3 class="drawer-label" id="drawer-explore" data-t="explore">Explorer</h3>
-          <button class="drawer-route" type="button" data-service="flights"><span class="drawer-icon" data-icon="plane"></span><span class="drawer-route-copy"><strong data-t="flights">Vols</strong><small data-t="drawerFlights">Trouver votre prochain vol</small></span><span class="drawer-arrow" data-icon="arrow"></span></button>
-          <button class="drawer-route" type="button" data-service="stays"><span class="drawer-icon" data-icon="bed"></span><span class="drawer-route-copy"><strong data-t="stays">Hébergement</strong><small data-t="drawerStays">Préparer votre séjour</small></span><span class="drawer-arrow" data-icon="arrow"></span></button>
-          <a class="drawer-route" href="#destinations"><span class="drawer-icon" data-icon="compass"></span><span class="drawer-route-copy"><strong data-t="destinations">Destinations</strong><small data-t="drawerDestinations">Des idées pour votre prochain départ</small></span><span class="drawer-arrow" data-icon="arrow"></span></a>
+          <button class="drawer-item drawer-route" type="button" data-service="flights">
+            <svg class="drawer-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg#plane"/></svg>
+            <span data-t="flights">Vols</span>
+            <svg class="drawer-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg#chevron-right"/></svg>
+            <svg class="drawer-current" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg#check"/></svg>
+          </button>
+          <button class="drawer-item drawer-route" type="button" data-service="stays">
+            <svg class="drawer-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg#bed-double"/></svg>
+            <span data-t="stays">Hébergement</span>
+            <svg class="drawer-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg#chevron-right"/></svg>
+            <svg class="drawer-current" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg#check"/></svg>
+          </button>
+          <a class="drawer-item drawer-route" href="#destinations">
+            <svg class="drawer-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg#map-pin"/></svg>
+            <span data-t="destinations">Destinations</span>
+            <svg class="drawer-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg#chevron-right"/></svg>
+          </a>
         </nav>
         <div class="drawer-support" role="group" aria-labelledby="drawer-support-title">
           <h3 class="drawer-label" id="drawer-support-title" data-t="useful">À vos côtés</h3>
-          <button class="drawer-link" type="button" data-action="trips"><span data-icon="ticket"></span><span data-t="myTrips">Mes voyages</span><span class="drawer-arrow" data-icon="arrow"></span></button>
-          <a class="drawer-link" href="#faq"><span data-icon="search"></span><span data-t="questions">Questions fréquentes</span><span class="drawer-arrow" data-icon="arrow"></span></a>
-          <button class="drawer-link" type="button" data-action="help"><span data-icon="headphones"></span><span data-t="help">Centre d’aide</span><span class="drawer-arrow" data-icon="arrow"></span></button>
+          <button class="drawer-item" type="button" data-action="trips">
+            <svg class="drawer-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg#ticket"/></svg>
+            <span data-t="myTrips">Mes voyages</span>
+            <svg class="drawer-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg#chevron-right"/></svg>
+          </button>
+          <a class="drawer-item" href="#faq">
+            <svg class="drawer-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg#circle-help"/></svg>
+            <span data-t="questions">Questions fréquentes</span>
+            <svg class="drawer-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg#chevron-right"/></svg>
+          </a>
+          <button class="drawer-item" type="button" data-action="help">
+            <svg class="drawer-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg#headset"/></svg>
+            <span data-t="help">Centre d’aide</span>
+            <svg class="drawer-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg#chevron-right"/></svg>
+          </button>
         </div>
         <div class="drawer-languages" role="group" aria-labelledby="drawer-languages-title">
-          <span id="drawer-languages-title" class="drawer-label"><span data-icon="globe"></span><span data-t="drawerLanguage">Langue</span></span>
+          <span id="drawer-languages-title" class="drawer-label"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg#globe"/></svg><span data-t="drawerLanguage">Langue</span></span>
           <div class="drawer-language-options">
             <button type="button" data-lang="fr" lang="fr" aria-pressed="true">Français</button>
             <button type="button" data-lang="en" lang="en" aria-pressed="false">English</button>
@@ -165,6 +190,6 @@
   </dialog>
   <dialog id="dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
   <div id="toast" class="toast" role="status" hidden></div>
-  <script type="module" src="app.js?v=20261109-menu"></script>
+  <script type="module" src="app.js?v=20261109-lucide"></script>
 </body>
 </html>

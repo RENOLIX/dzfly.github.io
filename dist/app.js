@@ -22,9 +22,9 @@ const featuredDestinationText={
   DOH:[["Qatar","Doha","Sur la corniche"],["Qatar","Doha","Along the Corniche"],["قطر","الدوحة","على الكورنيش"]],
   CAI:[["Égypte","Le Caire","Les pyramides de Gizeh"],["Egypt","Cairo","The Pyramids of Giza"],["مصر","القاهرة","أهرامات الجيزة"]],
 };
-Object.assign(fr,{drawerTitle:'Votre espace voyage',drawerOpen:'Ouvrir le menu',drawerClose:'Fermer le menu',drawerFlights:'Trouver votre prochain vol',drawerStays:'Préparer votre séjour',drawerDestinations:'Des idées pour votre prochain départ',drawerLanguage:'Langue'});
-Object.assign(en,{drawerTitle:'Your travel space',drawerOpen:'Open the menu',drawerClose:'Close the menu',drawerFlights:'Find your next flight',drawerStays:'Plan your stay',drawerDestinations:'Ideas for your next departure',drawerLanguage:'Language'});
-Object.assign(ar,{drawerTitle:'مساحتك للسفر',drawerOpen:'فتح القائمة',drawerClose:'إغلاق القائمة',drawerFlights:'ابحث عن رحلتك القادمة',drawerStays:'خطّط لإقامتك',drawerDestinations:'أفكار لرحلتك القادمة',drawerLanguage:'اللغة'});
+Object.assign(fr,{drawerTitle:'Menu',drawerOpen:'Ouvrir le menu',drawerClose:'Fermer le menu',drawerLanguage:'Langue'});
+Object.assign(en,{drawerTitle:'Menu',drawerOpen:'Open the menu',drawerClose:'Close the menu',drawerLanguage:'Language'});
+Object.assign(ar,{drawerTitle:'القائمة',drawerOpen:'فتح القائمة',drawerClose:'إغلاق القائمة',drawerLanguage:'اللغة'});
 const dictionaries={fr,en,ar};
 for(const [code,translations] of Object.entries(featuredDestinationText)){
   Object.values(dictionaries).forEach((dictionary,index)=>{
