@@ -11,7 +11,7 @@
   <link rel="preload" href="assets/hero-stays.webp" as="image" media="(min-width:761px)">
   <link rel="preload" href="assets/hero-stays-mobile.webp" as="image" media="(max-width:760px)">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="motion.css?v=20261107-takeoff">
+  <link rel="stylesheet" href="motion.css?v=20261109-destinations">
   <link rel="stylesheet" href="takeoff.css?v=20261107-takeoff">
 </head>
 <body>
@@ -33,7 +33,7 @@
     </header>
     <div class="hero-copy wrap">
       <p class="eyebrow"><span data-t="eyebrow">LE MONDE VOUS ATTEND</span></p>
-      <h1 data-t="heroTitle">D’ici, vers tous<br>vos <em>ailleurs.</em></h1>
+      <h1 data-t="heroTitle">Une marque algérienne,<br><em>une ambition internationale.</em></h1>
       <p class="hero-sub" data-t="heroSub">Votre prochain départ commence avec DZ FLY.</p>
     </div>
     <div class="search-area wrap" id="search">
@@ -59,23 +59,39 @@
   <main>
     <section class="results-section wrap" id="results" hidden aria-labelledby="results-title"></section>
     <section class="destinations wrap" id="destinations">
-      <div class="section-heading"><div><p class="eyebrow dark" data-t="escape">UNE ENVIE D’ÉVASION ?</p><h2 data-t="destTitle">Votre prochaine histoire commence ici.</h2></div><a class="text-link" href="#search"><span data-t="allDestinations">Trouver mon vol</span><span data-icon="arrow"></span></a></div>
+      <div class="section-heading"><div><p class="eyebrow dark" data-t="escape">UNE ENVIE D’ÉVASION ?</p><h2 data-t="destTitle">Votre prochaine histoire commence ici.</h2></div><a class="text-link" href="#search" data-service="flights"><span data-t="allDestinations">Trouver mon vol</span><span data-icon="arrow"></span></a></div>
       <div class="destination-grid">
-        <button class="destination" data-destination="IST">
-          <span class="destination-window" aria-hidden="true"><span class="window-liner"><span class="window-view"><img src="assets/istanbul.jpg" alt="" loading="lazy" width="600" height="720"><span class="window-shade"><span class="window-handle"></span></span></span></span></span>
-          <span class="destination-bottom"><span><small>TURQUIE</small><strong>Istanbul</strong></span><span class="circle-arrow" data-icon="arrow"></span></span><span class="destination-chip" data-t="culture">Culture & découvertes</span>
+        <button class="destination" type="button" data-destination="BCN">
+          <span class="destination-window" aria-hidden="true"><span class="window-liner"><span class="window-view"><img src="assets/destination-barcelone.webp" alt="" loading="lazy" decoding="async" width="680" height="950"><span class="window-shade"><span class="window-handle"></span></span></span></span></span>
+          <span class="destination-bottom"><span><small data-t="destCountryBCN">Espagne</small><strong data-t="destCityBCN">Barcelone</strong></span><span class="circle-arrow" data-icon="arrow"></span></span><span class="destination-chip" data-t="destTagBCN">Sur les traces de Gaudí</span>
         </button>
-        <button class="destination" data-destination="CDG">
-          <span class="destination-window" aria-hidden="true"><span class="window-liner"><span class="window-view"><img src="assets/paris.jpg" alt="" loading="lazy" width="600" height="720"><span class="window-shade"><span class="window-handle"></span></span></span></span></span>
-          <span class="destination-bottom"><span><small>FRANCE</small><strong>Paris</strong></span><span class="circle-arrow" data-icon="arrow"></span></span><span class="destination-chip" data-t="cityBreak">Une escapade en ville</span>
+        <button class="destination" type="button" data-destination="KUL">
+          <span class="destination-window" aria-hidden="true"><span class="window-liner"><span class="window-view"><img src="assets/destination-kuala-lumpur.webp" alt="" loading="lazy" decoding="async" width="680" height="950"><span class="window-shade"><span class="window-handle"></span></span></span></span></span>
+          <span class="destination-bottom"><span><small data-t="destCountryKUL">Malaisie</small><strong data-t="destCityKUL">Kuala Lumpur</strong></span><span class="circle-arrow" data-icon="arrow"></span></span><span class="destination-chip" data-t="destTagKUL">Les tours Petronas</span>
         </button>
-        <button class="destination" data-destination="DPS">
-          <span class="destination-window" aria-hidden="true"><span class="window-liner"><span class="window-view"><img src="assets/bali.jpg" alt="" loading="lazy" width="600" height="720"><span class="window-shade"><span class="window-handle"></span></span></span></span></span>
-          <span class="destination-bottom"><span><small>INDONÉSIE</small><strong>Bali</strong></span><span class="circle-arrow" data-icon="arrow"></span></span><span class="destination-chip" data-t="nature">Nature & déconnexion</span>
+        <button class="destination" type="button" data-destination="IST">
+          <span class="destination-window" aria-hidden="true"><span class="window-liner"><span class="window-view"><img src="assets/destination-istanbul.webp" alt="" loading="lazy" decoding="async" width="680" height="950"><span class="window-shade"><span class="window-handle"></span></span></span></span></span>
+          <span class="destination-bottom"><span><small data-t="destCountryIST">Turquie</small><strong data-t="destCityIST">Istanbul</strong></span><span class="circle-arrow" data-icon="arrow"></span></span><span class="destination-chip" data-t="destTagIST">La tour de Galata</span>
         </button>
-        <button class="destination" data-destination="DXB">
-          <span class="destination-window" aria-hidden="true"><span class="window-liner"><span class="window-view"><img src="assets/dubai.jpg" alt="" loading="lazy" width="600" height="720"><span class="window-shade"><span class="window-handle"></span></span></span></span></span>
-          <span class="destination-bottom"><span><small>ÉMIRATS ARABES UNIS</small><strong>Dubaï</strong></span><span class="circle-arrow" data-icon="arrow"></span></span><span class="destination-chip" data-t="sun">Soleil toute l’année</span>
+        <button class="destination" type="button" data-destination="CDG">
+          <span class="destination-window" aria-hidden="true"><span class="window-liner"><span class="window-view"><img src="assets/destination-paris.webp" alt="" loading="lazy" decoding="async" width="680" height="950"><span class="window-shade"><span class="window-handle"></span></span></span></span></span>
+          <span class="destination-bottom"><span><small data-t="destCountryCDG">France</small><strong data-t="destCityCDG">Paris</strong></span><span class="circle-arrow" data-icon="arrow"></span></span><span class="destination-chip" data-t="destTagCDG">La tour Eiffel</span>
+        </button>
+        <button class="destination" type="button" data-destination="JED">
+          <span class="destination-window" aria-hidden="true"><span class="window-liner"><span class="window-view"><img src="assets/destination-djeddah.webp" alt="" loading="lazy" decoding="async" width="680" height="950"><span class="window-shade"><span class="window-handle"></span></span></span></span></span>
+          <span class="destination-bottom"><span><small data-t="destCountryJED">Arabie saoudite</small><strong data-t="destCityJED">Djeddah</strong></span><span class="circle-arrow" data-icon="arrow"></span></span><span class="destination-chip" data-t="destTagJED">Au cœur d’Al-Balad</span>
+        </button>
+        <button class="destination" type="button" data-destination="CAN">
+          <span class="destination-window" aria-hidden="true"><span class="window-liner"><span class="window-view"><img src="assets/destination-guangzhou.webp" alt="" loading="lazy" decoding="async" width="680" height="950"><span class="window-shade"><span class="window-handle"></span></span></span></span></span>
+          <span class="destination-bottom"><span><small data-t="destCountryCAN">Chine</small><strong data-t="destCityCAN">Guangzhou</strong></span><span class="circle-arrow" data-icon="arrow"></span></span><span class="destination-chip" data-t="destTagCAN">La tour de Canton</span>
+        </button>
+        <button class="destination" type="button" data-destination="DOH">
+          <span class="destination-window" aria-hidden="true"><span class="window-liner"><span class="window-view"><img src="assets/destination-doha.webp" alt="" loading="lazy" decoding="async" width="680" height="950"><span class="window-shade"><span class="window-handle"></span></span></span></span></span>
+          <span class="destination-bottom"><span><small data-t="destCountryDOH">Qatar</small><strong data-t="destCityDOH">Doha</strong></span><span class="circle-arrow" data-icon="arrow"></span></span><span class="destination-chip" data-t="destTagDOH">Sur la corniche</span>
+        </button>
+        <button class="destination" type="button" data-destination="CAI">
+          <span class="destination-window" aria-hidden="true"><span class="window-liner"><span class="window-view"><img src="assets/destination-le-caire.webp" alt="" loading="lazy" decoding="async" width="680" height="950"><span class="window-shade"><span class="window-handle"></span></span></span></span></span>
+          <span class="destination-bottom"><span><small data-t="destCountryCAI">Égypte</small><strong data-t="destCityCAI">Le Caire</strong></span><span class="circle-arrow" data-icon="arrow"></span></span><span class="destination-chip" data-t="destTagCAI">Les pyramides de Gizeh</span>
         </button>
       </div>
     </section>
@@ -117,6 +133,6 @@
   <button class="help-fab" data-action="help"><span data-icon="headphones"></span><span data-t="needHelp">Besoin d’aide ?</span></button>
   <dialog id="dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
   <div id="toast" class="toast" role="status" hidden></div>
-  <script type="module" src="app.js?v=20261107-takeoff"></script>
+  <script type="module" src="app.js?v=20261109-destinations"></script>
 </body>
 </html>

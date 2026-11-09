@@ -22,7 +22,9 @@ export const airports=[
   {code:'LHR',city:'Londres',name:'Heathrow',country:'Royaume-Uni'},
   {code:'YUL',city:'Montréal',name:'Pierre-Elliott-Trudeau',country:'Canada'},
   {code:'JED',city:'Djeddah',name:'King Abdulaziz',country:'Arabie saoudite'},
-  {code:'DOH',city:'Doha',name:'Hamad',country:'Qatar'}
+  {code:'DOH',city:'Doha',name:'Hamad',country:'Qatar'},
+  {code:'CAN',city:'Guangzhou',name:'Baiyun',country:'Chine'},
+  {code:'CAI',city:'Le Caire',name:'Cairo International',country:'Égypte'}
 ];
 export const airport=code=>airports.find(a=>a.code===code);
 export const todayISO=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;};
@@ -44,12 +46,14 @@ export function validateSearch(s,today=todayISO()){
 }
 export function demoOffers(s){
   // Deliberately synthetic examples; these must never be presented as live inventory.
-  const far=['DPS','KUL','YUL','DXB','DOH','JED'].includes(s.destination)||['DPS','KUL','YUL','DXB','DOH','JED'].includes(s.origin);
+  const longHaul=['DPS','KUL','YUL','DXB','DOH','JED','CAN'];
+  const far=longHaul.includes(s.destination)||longHaul.includes(s.origin);
+  const egypt=s.destination==='CAI'||s.origin==='CAI';
   const round=s.trip==='round'?1.75:s.trip==='multi'?1.9:1;
   const base=Math.round(((far?63000:19500)+(s.destination.charCodeAt(0)%9)*1100)*round/100)*100;
   return [
-    {id:'demo-a',departure:'08:30',arrival:far?'18:45':'11:00',duration:far?'10 h 15':'2 h 30',stops:far?1:0,baggage:true,price:base},
-    {id:'demo-b',departure:'13:15',arrival:far?'23:30':'15:55',duration:far?'10 h 15':'2 h 40',stops:far?1:0,baggage:false,price:base-3300},
+    {id:'demo-a',departure:'08:30',arrival:far?'18:45':egypt?'12:15':'11:00',duration:far?'10 h 15':egypt?'3 h 45':'2 h 30',stops:far?1:0,baggage:true,price:base},
+    {id:'demo-b',departure:'13:15',arrival:far?'23:30':egypt?'17:15':'15:55',duration:far?'10 h 15':egypt?'4 h':'2 h 40',stops:far?1:0,baggage:false,price:base-3300},
     {id:'demo-c',departure:'17:40',arrival:far?'09:10 +1':'23:10',duration:far?'15 h 30':'5 h 30',stops:1,baggage:true,price:base-1600}
   ].filter(o=>(!s.direct||o.stops===0)&&(!s.baggage||o.baggage));
 }

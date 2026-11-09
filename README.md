@@ -99,7 +99,7 @@ Prompt Imagegen — avion :
 
 > Use case: product-mockup. Asset type: transparent cutout for the DZ FLY travel website, to be animated over a blue sky using HTML/CSS. Create one extremely realistic modern twin-engine passenger jet seen directly from ABOVE, orthographic dorsal view, flying horizontally toward the LEFT: nose at the left edge, tail on the right, wings extending to the top and bottom. White polished fuselage, very subtle midnight blue tail accent, silver wings, two realistic engines mounted under wings and visible from the overhead perspective, precise credible aircraft geometry, soft sunlight from upper left, sophisticated premium airline campaign photographic 3D render, subtle natural material highlights. Composition: aircraft centered, entire aircraft including both wingtips and tail fully visible with minimal transparent padding, large aircraft occupying about 90 percent of the square canvas. Truly transparent alpha background. ONLY the airplane. No background, no sea, no sky, no cloud, NO VAPOR OR CONTRAILS, no ground, no cast ground shadow, no text, no lettering, no logo, no watermark, no frame, no mockup UI. This is not an icon: it must look photorealistic and dimensional. Critical: nose points LEFT and dorsal view from directly above. Wings point up/down, the long fuselage is horizontal.
 
-Les quatre destinations utilisent un cadre de hublot dessiné en CSS à partir de la référence du client. Le volet et sa poignée se lèvent progressivement au défilement et se referment en remontant. Les cartes d’une même rangée restent synchronisées (4 sur ordinateur, 2 par rangée sur téléphone). Les photos et les liens de destination sont conservés. Avec la préférence système de réduction des animations, les hublots restent ouverts ; ils sont également ouverts si JavaScript est désactivé.
+Les huit destinations utilisent un cadre de hublot dessiné en CSS à partir de la référence du client. Le volet et sa poignée se lèvent progressivement au défilement et se referment en remontant. Les cartes d’une même rangée restent synchronisées (4 sur ordinateur, 2 sur téléphone). Chaque hublot préremplit la destination de la recherche de vols de démonstration. Avec la préférence système de réduction des animations, les hublots restent ouverts ; ils sont également ouverts si JavaScript est désactivé.
 
 Logo : fichier fourni par le client, copié dans `dist/assets/logo-original.png`, sans retouche.
 
@@ -109,10 +109,15 @@ Prompt utilisé :
 
 > Use case: photorealistic-natural. Asset type: premium travel website hero background, landscape 1536x1024 or wider. Create an exquisite realistic photograph seen from an airplane window high above a sea of soft white cumulus clouds over the Mediterranean at blue hour just before sunset. A clean white aircraft wing rises from the lower left corner, pointing toward the middle right. Natural small warm sunlight highlights at the horizon, rich deep navy blue clear sky across the upper two thirds, luminous cyan haze at the horizon. Sophisticated editorial travel photography, credible aircraft proportions, fine atmospheric detail, inviting and serene. Composition: full bleed landscape, leave top and center mostly uncluttered deep blue sky for navigation and white headline and lower center covered by a website search panel. No text, logos, brand, lettering, watermark, window frame, UI, or graphic overlays.
 
-Photos des destinations :
-- Istanbul : https://images.unsplash.com/photo-1524231757912-21f4fe3a7200
-- Paris : https://images.unsplash.com/photo-1502602898657-3e91760cbb34
-- Bali : https://images.unsplash.com/photo-1537996194471-e657df975ab4
-- Dubaï : https://images.unsplash.com/photo-1512453979798-5ea266f8880c
+Photos des hublots, recadrées en 680 × 950 et optimisées en WebP ([licence Unsplash](https://unsplash.com/license)) :
+
+- Barcelone, Sagrada Família : [Pourya Gohari](https://unsplash.com/photos/a-very-tall-building-with-statues-on-its-sides-uoBCga1fNwU)
+- Kuala Lumpur, tours Petronas : [ZHENYU LUO](https://unsplash.com/photos/illuminated-petronas-twin-towers-at-dusk-in-urban-skyline-MjCphECP75s)
+- Istanbul, tour de Galata : [Just Filip](https://unsplash.com/photos/galata-tower-viewed-from-a-bustling-street-9vEY38-E31Y)
+- Paris, tour Eiffel : [Nosiuol](https://unsplash.com/photos/eiffel-towe-over-the-buildings-29qzifjmP34)
+- Djeddah, Al-Balad : [Jeremiah Del Mar](https://unsplash.com/photos/traditional-wooden-balconies-adorn-historic-buildings-along-a-narrow-street-6GDl1D5JZQs)
+- Guangzhou, tour de Canton : [Lycheeart](https://unsplash.com/photos/a-very-tall-tower-towering-over-a-city-next-to-a-river-BZG5p-u35tI)
+- Doha, bateaux traditionnels et skyline : [Dean Zhang](https://unsplash.com/photos/traditional-boats-in-harbor-with-city-skyline-background-7TpOb8YTc-Y)
+- Le Caire, pyramides de Gizeh : [Moxin Wang](https://unsplash.com/photos/a-group-of-people-riding-camels-in-front-of-three-pyramids-LqKS08FCehc)
 
 Police arabe : Noto Sans Arabic, fichier local distribué sous licence SIL Open Font License. Polices latines : DM Sans et Manrope via Google Fonts, avec repli Arial.

@@ -34,7 +34,7 @@ html.lenis,html.lenis body{height:auto}
 .lenis.lenis-stopped{overflow:hidden}
 dialog,.airport-list{overscroll-behavior:contain}
 /* Sculpted aircraft windows. The shade moves inside the opening, behind the rim. */
-.destination-grid{gap:30px;align-items:start}
+.destination-grid{gap:36px 30px;align-items:start}
 .destination{display:block;height:auto;overflow:visible;border-radius:0;padding:0 4px 8px;background:transparent;color:var(--navy);isolation:auto}
 .destination:after{display:none}
 .destination-window{position:relative;display:block;aspect-ratio:0.735;border-radius:48% 48% 46% 46% / 34% 34% 35% 35%;background:linear-gradient(130deg,#fff 2%,#fafbfc 15%,#c7c9cd 35%,#e9eaed 57%,#fff 78%,#c3c6cc 100%);box-shadow:inset 2px 3px 4px #fff,inset -2px -3px 5px #8c929a55,0 12px 20px -16px #14294470,0 1px 2px #3a465f22}
@@ -47,7 +47,7 @@ dialog,.airport-list{overscroll-behavior:contain}
 .window-shade{position:absolute;z-index:1;inset:-2% -1% 0;display:block;border-radius:0 0 46% 46% / 0 0 6% 6%;background:radial-gradient(ellipse at 65% 32%,#e3e4e6 0%,#c8cace 48%,#a4a8ad 100%);box-shadow:inset 3px 0 8px #626a7470,inset -2px 0 6px #626a7440,inset 0 -2px 2px #fafbfc,0 5px 5px #17263970;transform:translate3d(0,calc(var(--window-open,1) * -103%),0)}
 .window-handle{position:absolute;inset-inline:31%;bottom:5.5%;height:2.7%;min-height:4px;border-radius:50% / 48%;background:linear-gradient(#fff 0%,#e2e3e5 32%,#95999f 72%,#f7f8fa 100%);box-shadow:0 3px 3px #2d333a55,0 -1px 1px #fff7}
 .destination-bottom{position:relative;inset:auto;align-items:center;margin:20px 8px 0;gap:8px}
-.destination-bottom small{color:#7e8c9a;font-size:8px;letter-spacing:1.5px;line-height:1.5;margin-bottom:3px}
+.destination-bottom small{color:#7e8c9a;font-size:8px;letter-spacing:1.5px;line-height:1.5;margin-bottom:3px;text-transform:uppercase}
 .destination-bottom strong{font-size:25px;line-height:1.35}
 .destination .circle-arrow{width:32px;height:32px;border-color:#ccd8e3;color:var(--navy);flex-shrink:0;transition:background 200ms,color 200ms,border-color 200ms}
 .destination:hover .circle-arrow{background:var(--navy);border-color:var(--navy);color:#fff}
@@ -67,6 +67,9 @@ dialog,.airport-list{overscroll-behavior:contain}
  .hero[data-mode=stays] .search-submit{grid-column:3}
 }
 @media(max-width:760px){
+ .hero .hero-copy h1{font-size:clamp(24px,7.4vw,46px);letter-spacing:-.8px;text-wrap:balance}
+ .hero .hero-copy h1 em{letter-spacing:-.65px}
+ html[dir=rtl] .hero .hero-copy h1,html[dir=rtl] .hero .hero-copy h1 em{letter-spacing:0}
  .service-tabs{width:290px}
  .service-tab{padding-inline:15px}
  .search-top{min-height:0}
@@ -80,6 +83,7 @@ dialog,.airport-list{overscroll-behavior:contain}
  .destination{height:auto;padding:0 2px 5px;border-radius:0}
  .destination-bottom{inset:auto;margin:14px 2px 0;gap:5px}
  .destination-bottom strong{font-size:21px}
+ .destination-bottom strong{overflow-wrap:anywhere}
  .destination-bottom small{font-size:6.5px;letter-spacing:.7px;max-width:none;min-height:10px}
  .destination .circle-arrow{width:25px;height:25px}
  .destination-chip{inset:auto;margin:3px 2px 0;padding:0;font-size:8px;max-width:none}
