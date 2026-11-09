@@ -87,6 +87,8 @@ Ajouter la base de données, l’authentification, l’administration, la gestio
 
 ## Images
 
+Photo du bandeau du menu : [la baie d’Alger au coucher du soleil, par abderrahmane chablaoui](https://unsplash.com/photos/a-view-of-a-city-at-sunset-with-the-ocean-in-the-background-xyONOpOAmuo), [licence Unsplash](https://unsplash.com/license). Le flou est appliqué en CSS derrière le titre.
+
 ### Bloc « Prêt à changer d’horizon ? »
 
 Le bloc de préparation du voyage reprend une composition texte clair / ciel bleu, avec l’avion photoréaliste transparent `dist/assets/takeoff-plane.webp` (source PNG conservée). Généré avec l’outil intégré Imagegen (pas de CLI), il est animé séparément des deux traînées blanches SVG. Les volutes et le premier plan utilisent la texture transparente `dist/assets/takeoff-clouds.webp` (source PNG conservée), également générée par Imagegen. Les WebP optimisés conservent la transparence. Le défilement fait entrer l’avion de droite à gauche ; les volutes et les nuages bougent uniquement lorsque le bloc est visible. La version téléphone empile le texte et la scène. Les deux boutons reviennent à la recherche et aux destinations. Les textes sont disponibles en français, anglais et arabe. La préférence de réduction des animations arrête les effets et conserve l’avion visible.
