@@ -4,14 +4,14 @@
 .account-cover{
   display:flex;flex-direction:column;justify-content:space-between;gap:36px;
   padding:clamp(28px,4vw,60px);
-  background:linear-gradient(180deg,#082a549c 0%,#082a541a 40%,#061f40eb 100%),#082a54 url('assets/account-alger.webp') 58% center/cover no-repeat;
+  background:linear-gradient(180deg,#07274d70 0%,#082a5410 34%,#061f40de 100%),#082a54 url('assets/account-sky.webp') center/cover no-repeat;
   color:#fff;
 }
 .account-brand{display:block;width:133px;height:88px}
 .account-brand img{display:block;width:100%;height:100%;object-fit:contain;object-position:left center}
-.account-cover-kicker{display:block;margin-block-end:13px;font-size:10px;font-weight:700;letter-spacing:.16em;color:#e2f2ff}
-.account-cover-copy p{max-width:360px;font-family:var(--heading);font-size:clamp(34px,4.1vw,60px);line-height:1.08;font-weight:800;letter-spacing:-.05em;text-wrap:balance}
-.account-cover-caption{display:block;margin-block-start:17px;font-size:13px;line-height:1.5;color:#f2f7fc}
+.account-slogan{font-family:var(--heading);font-size:clamp(24px,3.2vw,46px);line-height:1.17;font-weight:800;letter-spacing:-.045em}
+.account-slogan span,.account-slogan em{display:block}
+.account-slogan em{margin-block-start:3px;color:#d3efff;font-family:Georgia,serif;font-size:.9em;font-weight:400;letter-spacing:-.028em}
 .account-surface{position:relative;display:flex;align-items:center;justify-content:center;min-width:0;padding:58px clamp(28px,5vw,74px) 34px}
 .account-back{
   display:inline-flex;align-items:center;gap:8px;position:absolute;inset-block-start:24px;inset-inline-start:clamp(28px,5vw,74px);
@@ -59,17 +59,17 @@
 .account-alternate a{color:var(--navy);font-weight:750}
 .account-page a:focus-visible{outline:2px solid #087ca5;outline-offset:4px;border-radius:3px}
 .account-cover a:focus-visible{outline-color:#fff}
-html[dir=rtl] .account-cover-kicker,html[dir=rtl] .account-cover-copy p,html[dir=rtl] .account-inner h1{letter-spacing:0}
-html[dir=rtl] .account-cover-copy p{line-height:1.4}
+html[dir=rtl] .account-slogan,html[dir=rtl] .account-slogan em,html[dir=rtl] .account-inner h1{letter-spacing:0}
+html[dir=rtl] .account-slogan{line-height:1.4}
+html[dir=rtl] .account-slogan em{font-family:inherit;font-style:normal}
 html[dir=rtl] .account-brand img{object-position:right center}
 html[dir=rtl] .account-back svg{transform:none}
 html[dir=rtl] .account-submit svg{transform:rotate(180deg)}
 @media(max-width:760px){
   .account-layout{grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr}
-  .account-cover{min-height:148px;gap:9px;padding:12px 23px 19px;background-position:center,center 52%}
-  .account-brand{width:100px;height:60px}
-  .account-cover-kicker,.account-cover-caption{display:none}
-  .account-cover-copy p{font-size:26px;letter-spacing:-.04em}
+  .account-cover{min-height:148px;gap:9px;padding:11px 23px 18px;background-position:center,center 47%}
+  .account-brand{width:100px;height:53px}
+  .account-slogan{font-size:clamp(21px,6.7vw,27px)}
   .account-surface{display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;gap:13px;padding:17px 23px 30px}
   .account-back{position:static;align-self:flex-start;min-height:30px;font-size:12px}
   .account-inner{align-self:center}

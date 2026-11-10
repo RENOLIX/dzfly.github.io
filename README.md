@@ -91,7 +91,7 @@ Ajouter la base de données, l’authentification, l’administration, la gestio
 
 Photo du bandeau du menu : [la baie d’Alger au coucher du soleil, par abderrahmane chablaoui](https://unsplash.com/photos/a-view-of-a-city-at-sunset-with-the-ocean-in-the-background-xyONOpOAmuo), [licence Unsplash](https://unsplash.com/license). Le flou est appliqué en CSS derrière le titre.
 
-Photo des pages de compte : [la baie d’Alger, par abderrahmane chablaoui](https://unsplash.com/photos/a-large-body-of-water-sitting-next-to-a-city-RDn0dlbglxg), [licence Unsplash](https://unsplash.com/license).
+Photo des pages de compte : [une aile d’avion au-dessus des nuages, par Solstice Hannan](https://unsplash.com/photos/an-airplane-wing-above-clouds-udOjOT4U-Fk), [licence Unsplash](https://unsplash.com/license).
 
 ### Bloc « Prêt à changer d’horizon ? »
 

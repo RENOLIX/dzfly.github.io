@@ -1,6 +1,6 @@
 const copy={
   en:{
-    coverKicker:'DEPARTURES FROM ALGERIA',coverTitle:'The world is waiting.',coverCaption:'The Bay of Algiers, on the Mediterranean.',
+    sloganOrigin:'An Algerian brand,',sloganAmbition:'an international ambition.',
     back:'Back to home',login:'Sign in',register:'Register',loginTitle:'Sign in',signupTitle:'Create an account',
     loginLead:'Find your itineraries and plan your next departure.',signupLead:'A space to find your itineraries and plan your next trips.',
     lastName:'Last name',firstName:'First name',lastNamePlaceholder:'Your last name',firstNamePlaceholder:'Your first name',
@@ -8,7 +8,7 @@ const copy={
     already:'Already have an account?',newHere:'New to DZ FLY?',emailExample:'you@example.com',navLabel:'Traveller account'
   },
   ar:{
-    coverKicker:'رحلات من الجزائر',coverTitle:'العالم بانتظارك.',coverCaption:'خليج الجزائر على ساحل البحر الأبيض المتوسط.',
+    sloganOrigin:'علامة جزائرية،',sloganAmbition:'بطموح عالمي.',
     back:'العودة إلى الصفحة الرئيسية',login:'تسجيل الدخول',register:'التسجيل',loginTitle:'تسجيل الدخول',signupTitle:'إنشاء حساب',
     loginLead:'اعثر على مساراتك وخطّط لرحلتك القادمة.',signupLead:'مساحة للاطلاع على مساراتك والتخطيط لرحلاتك القادمة.',
     lastName:'اللقب',firstName:'الاسم',lastNamePlaceholder:'لقبك',firstNamePlaceholder:'اسمك',
