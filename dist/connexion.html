@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#082a54">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Connexion — DZ FLY</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="account.css">
+</head>
+<body class="account-page" data-page="connexion">
+  <main class="account-layout">
+    <aside class="account-cover" aria-label="DZ FLY">
+      <a class="account-brand" href="index.html" aria-label="DZ FLY — Accueil"><img src="assets/logo-original.png" alt="DZ FLY" width="1448" height="1086"></a>
+      <div class="account-cover-copy">
+        <span class="account-cover-kicker" data-copy="coverKicker">DÉPARTS DEPUIS L’ALGÉRIE</span>
+        <p data-copy="coverTitle">Le monde vous attend.</p>
+        <span class="account-cover-caption" data-copy="coverCaption">La baie d’Alger, au bord de la Méditerranée.</span>
+      </div>
+    </aside>
+    <section class="account-surface" aria-labelledby="account-title">
+      <a class="account-back" href="index.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg?v=20261110-compte#chevron-right"/></svg><span data-copy="back">Retour à l’accueil</span></a>
+      <div class="account-inner">
+        <nav class="account-tabs" aria-label="Espace voyageur">
+          <a href="connexion.html" aria-current="page" data-copy="login">Connexion</a>
+          <a href="inscription.html" data-copy="register">Inscription</a>
+        </nav>
+        <h1 id="account-title" data-copy="loginTitle">Connexion</h1>
+        <p class="account-lead" data-copy="loginLead">Retrouvez vos itinéraires et préparez votre prochain départ.</p>
+        <form class="account-form" aria-describedby="account-preview">
+          <fieldset disabled>
+            <label for="account-email" data-copy="email">Adresse e-mail</label>
+            <input id="account-email" type="email" autocomplete="email" placeholder="vous@exemple.com">
+            <label for="account-password" data-copy="password">Mot de passe</label>
+            <input id="account-password" type="password" autocomplete="current-password" placeholder="••••••••••">
+            <button class="account-submit" type="button"><span data-copy="submitLogin">Se connecter</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg?v=20261110-compte#chevron-right"/></svg></button>
+          </fieldset>
+          <p class="account-preview" id="account-preview"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg?v=20261110-compte#circle-help"/></svg><span data-copy="preview">Aperçu : les comptes seront activés prochainement.</span></p>
+        </form>
+        <p class="account-alternate"><span data-copy="newHere">Nouveau sur DZ FLY ?</span> <a href="inscription.html" data-copy="signupTitle">Créer un compte</a></p>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="account-theme.mjs"></script>
+</body>
+</html>

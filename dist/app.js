@@ -22,9 +22,9 @@ const featuredDestinationText={
   DOH:[["Qatar","Doha","Sur la corniche"],["Qatar","Doha","Along the Corniche"],["قطر","الدوحة","على الكورنيش"]],
   CAI:[["Égypte","Le Caire","Les pyramides de Gizeh"],["Egypt","Cairo","The Pyramids of Giza"],["مصر","القاهرة","أهرامات الجيزة"]],
 };
-Object.assign(fr,{drawerTitle:'Menu',drawerOpen:'Ouvrir le menu',drawerClose:'Fermer le menu',drawerLanguage:'Langue'});
-Object.assign(en,{drawerTitle:'Menu',drawerOpen:'Open the menu',drawerClose:'Close the menu',drawerLanguage:'Language'});
-Object.assign(ar,{drawerTitle:'القائمة',drawerOpen:'فتح القائمة',drawerClose:'إغلاق القائمة',drawerLanguage:'اللغة'});
+Object.assign(fr,{drawerTitle:'Menu',drawerOpen:'Ouvrir le menu',drawerClose:'Fermer le menu',drawerLanguage:'Langue',drawerAccount:'Connexion / Inscription'});
+Object.assign(en,{drawerTitle:'Menu',drawerOpen:'Open the menu',drawerClose:'Close the menu',drawerLanguage:'Language',drawerAccount:'Sign in / Register'});
+Object.assign(ar,{drawerTitle:'القائمة',drawerOpen:'فتح القائمة',drawerClose:'إغلاق القائمة',drawerLanguage:'اللغة',drawerAccount:'الدخول / إنشاء حساب'});
 const dictionaries={fr,en,ar};
 for(const [code,translations] of Object.entries(featuredDestinationText)){
   Object.values(dictionaries).forEach((dictionary,index)=>{

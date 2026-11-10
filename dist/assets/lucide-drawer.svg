@@ -43,4 +43,8 @@
     <path d="M18 6 6 18" />
     <path d="m6 6 12 12" />
   </symbol>
+  <symbol id="user-round" viewBox="0 0 24 24">
+    <circle cx="12" cy="8" r="5" />
+    <path d="M20 21a8 8 0 0 0-16 0" />
+  </symbol>
 </svg>

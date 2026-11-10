@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="motion.css?v=20261109-destinations">
   <link rel="stylesheet" href="takeoff.css?v=20261107-takeoff">
-  <link rel="stylesheet" href="drawer.css?v=20261109-alger">
+  <link rel="stylesheet" href="drawer.css?v=20261110-compte">
 </head>
 <body>
   <a class="skip-link" href="#search">Aller à la recherche</a>
@@ -139,6 +139,11 @@
         <h2 id="menu-drawer-title" data-t="drawerTitle">Menu</h2>
       </div>
       <div class="drawer-content">
+        <a class="drawer-account" href="connexion.html">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg?v=20261110-compte#user-round"/></svg>
+          <span data-t="drawerAccount">Connexion / Inscription</span>
+          <svg class="drawer-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg?v=20261110-compte#chevron-right"/></svg>
+        </a>
         <nav class="drawer-navigation" aria-labelledby="drawer-explore">
           <h3 class="drawer-label" id="drawer-explore" data-t="explore">Explorer</h3>
           <button class="drawer-item drawer-route" type="button" data-service="flights">
@@ -190,6 +195,6 @@
   </dialog>
   <dialog id="dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
   <div id="toast" class="toast" role="status" hidden></div>
-  <script type="module" src="app.js?v=20261109-lucide"></script>
+  <script type="module" src="app.js?v=20261110-compte"></script>
 </body>
 </html>

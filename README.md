@@ -52,6 +52,8 @@ npm run check
 
 ## Ce qui fonctionne
 
+- Le tiroir mène aux pages Connexion et Inscription. Ce sont des maquettes navigables en français, anglais et arabe : la saisie et l’envoi sont désactivés jusqu’à l’activation de l’authentification.
+
 - Accueil responsive, header transparent inspiré de la disposition Volz, logo fourni conservé sans retouche.
 - Photo de hero originale créée pour DZ FLY, destinations illustrées.
 - Français, anglais, arabe et mise en page de droite à gauche.
@@ -88,6 +90,8 @@ Ajouter la base de données, l’authentification, l’administration, la gestio
 ## Images
 
 Photo du bandeau du menu : [la baie d’Alger au coucher du soleil, par abderrahmane chablaoui](https://unsplash.com/photos/a-view-of-a-city-at-sunset-with-the-ocean-in-the-background-xyONOpOAmuo), [licence Unsplash](https://unsplash.com/license). Le flou est appliqué en CSS derrière le titre.
+
+Photo des pages de compte : [la baie d’Alger, par abderrahmane chablaoui](https://unsplash.com/photos/a-large-body-of-water-sitting-next-to-a-city-RDn0dlbglxg), [licence Unsplash](https://unsplash.com/license).
 
 ### Bloc « Prêt à changer d’horizon ? »
 
