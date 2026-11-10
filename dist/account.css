@@ -34,6 +34,16 @@
 .account-form input:disabled{opacity:1;-webkit-text-fill-color:#5c7183;cursor:default}
 .account-form input::placeholder{color:#5c7183}
 .account-form input[type="email"],.account-form input[type="password"]{text-align:start}
+.account-name-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.account-name-field label{display:block}
+.account-phone{
+  display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;
+  min-height:46px;margin-block-end:15px;border:1px solid #d8e3ed;border-radius:9px;background:#f8fafc;
+}
+.account-phone span{padding-inline:13px;border-inline-end:1px solid #d8e3ed;color:#203a54;font-size:14px;font-weight:700}
+.account-phone input{min-height:44px;margin:0;border:0;background:transparent}
+.account-phone:focus-within{outline:2px solid #087ca5;outline-offset:2px}
+.account-phone input:focus{outline:none}
 .account-submit{
   display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;min-height:47px;
   padding:10px 13px;border-radius:9px;background:var(--navy);color:#fff;font-size:14px;font-weight:750;

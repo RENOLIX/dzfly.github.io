@@ -7,7 +7,7 @@
   <title>Créer un compte — DZ FLY</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="account.css">
+  <link rel="stylesheet" href="account.css?v=20261110-inscription">
 </head>
 <body class="account-page" data-page="inscription">
   <main class="account-layout">
@@ -30,12 +30,25 @@
         <p class="account-lead" data-copy="signupLead">Un espace pour retrouver vos itinéraires et préparer vos prochains voyages.</p>
         <form class="account-form" aria-describedby="account-preview">
           <fieldset disabled>
+            <div class="account-name-row">
+              <div class="account-name-field">
+                <label for="account-last-name" data-copy="lastName">Nom</label>
+                <input id="account-last-name" type="text" autocomplete="family-name" placeholder="Votre nom" data-placeholder="lastNamePlaceholder">
+              </div>
+              <div class="account-name-field">
+                <label for="account-first-name" data-copy="firstName">Prénom</label>
+                <input id="account-first-name" type="text" autocomplete="given-name" placeholder="Votre prénom" data-placeholder="firstNamePlaceholder">
+              </div>
+            </div>
             <label for="account-email" data-copy="email">Adresse e-mail</label>
             <input id="account-email" type="email" autocomplete="email" placeholder="vous@exemple.com">
+            <label for="account-phone" data-copy="phone">Numéro de téléphone</label>
+            <div class="account-phone" dir="ltr">
+              <span id="account-phone-prefix">+213</span>
+              <input id="account-phone" type="tel" autocomplete="tel-national" aria-describedby="account-phone-prefix" placeholder="5 55 55 55 55">
+            </div>
             <label for="account-password" data-copy="password">Mot de passe</label>
             <input id="account-password" type="password" autocomplete="new-password" placeholder="••••••••••">
-            <label for="account-confirm" data-copy="confirm">Confirmer le mot de passe</label>
-            <input id="account-confirm" type="password" autocomplete="new-password" placeholder="••••••••••">
             <button class="account-submit" type="button"><span data-copy="signupTitle">Créer un compte</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg?v=20261110-compte#chevron-right"/></svg></button>
           </fieldset>
           <p class="account-preview" id="account-preview"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg?v=20261110-compte#circle-help"/></svg><span data-copy="preview">Aperçu : les comptes seront activés prochainement.</span></p>
@@ -44,6 +57,6 @@
       </div>
     </section>
   </main>
-  <script type="module" src="account-theme.mjs"></script>
+  <script type="module" src="account-theme.mjs?v=20261110-inscription"></script>
 </body>
 </html>
