@@ -7,7 +7,7 @@
   <title>Créer un compte — DZ FLY</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="account.css?v=20261111-verification">
+  <link rel="stylesheet" href="account.css?v=20261111-inscription">
 </head>
 <body class="account-page" data-page="inscription">
   <main class="account-layout">
@@ -47,14 +47,14 @@
             <input id="account-password" type="password" autocomplete="new-password" placeholder="••••••••••">
           </fieldset>
           <div class="account-cta-row">
-            <a class="account-submit account-submit-compact" href="verification.html" aria-describedby="account-preview"><span data-copy="signupTitle">Créer un compte</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg?v=20261110-compte#chevron-right"/></svg></a>
+            <button class="account-submit account-submit-compact" type="button" disabled aria-describedby="account-preview"><span data-copy="signupTitle">Créer un compte</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg?v=20261110-compte#chevron-right"/></svg></button>
           </div>
-          <p class="account-preview" id="account-preview"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg?v=20261110-compte#circle-help"/></svg><span data-copy="signupPreview">Aperçu : le bouton ouvre la démo de vérification. Aucun compte ne sera créé.</span></p>
+          <p class="account-preview" id="account-preview"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg?v=20261110-compte#circle-help"/></svg><span data-copy="signupClosed">Les inscriptions ne sont pas encore ouvertes.</span></p>
         </form>
         <p class="account-alternate"><span data-copy="already">Déjà un compte ?</span> <a href="connexion.html" data-copy="submitLogin">Se connecter</a></p>
       </div>
     </section>
   </main>
-  <script type="module" src="account-theme.mjs?v=20261111-verification"></script>
+  <script type="module" src="account-theme.mjs?v=20261111-inscription"></script>
 </body>
 </html>

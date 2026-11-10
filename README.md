@@ -52,7 +52,7 @@ npm run check
 
 ## Ce qui fonctionne
 
-- Le tiroir mène aux pages Connexion et Inscription. Les formulaires de compte sont désactivés jusqu’à l’activation de l’authentification. Le bouton « Créer un compte » ouvre une démo navigable de vérification : six cases animées, saisie ou collage, confirmation, erreur et renvoi simulé avec un délai de 30 secondes. Le code affiché est fictif, aucun compte n’est créé et aucun e-mail n’est envoyé.
+- Le tiroir mène aux pages Connexion et Inscription. Les formulaires de compte sont désactivés jusqu’à l’activation de l’authentification et de la vérification par e-mail.
 
 - Accueil responsive, header transparent inspiré de la disposition Volz, logo fourni conservé sans retouche.
 - Photo de hero originale créée pour DZ FLY, destinations illustrées.

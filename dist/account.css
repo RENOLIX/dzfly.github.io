@@ -52,7 +52,6 @@
 .account-submit svg{width:16px;height:16px;flex:none}
 .account-cta-row{display:flex;justify-content:center;margin-block-start:3px}
 .account-submit-compact{width:auto;justify-content:center;min-height:42px;padding-inline:16px;font-size:13px}
-.account-submit-compact:hover{background:#174168}
 .account-preview{
   display:flex;align-items:flex-start;gap:7px;margin-block-start:12px;
   color:#465f76;font-size:12px;line-height:1.5;
