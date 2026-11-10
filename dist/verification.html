@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#082a54">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Vérifier mon e-mail — DZ FLY</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="account.css?v=20261111-verification">
+  <link rel="stylesheet" href="verification.css?v=20261111-verification">
+</head>
+<body class="account-page" data-page="verification">
+  <main class="account-layout">
+    <aside class="account-cover" aria-label="DZ FLY">
+      <a class="account-brand" href="index.html" aria-label="DZ FLY — Accueil"><img src="assets/logo-original.png" alt="DZ FLY" width="1448" height="1086"></a>
+      <p class="account-slogan"><span data-copy="sloganOrigin">Une marque algérienne,</span> <em data-copy="sloganAmbition">une ambition internationale.</em></p>
+    </aside>
+    <section class="account-surface" aria-labelledby="account-title">
+      <a class="account-back" href="inscription.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg?v=20261110-compte#chevron-right"/></svg><span data-copy="backToSignup">Retour à l’inscription</span></a>
+      <div class="account-inner verification-inner">
+        <p class="verification-step" data-copy="verificationStep">Inscription · Étape 2 sur 2</p>
+        <h1 id="account-title" data-copy="verificationTitle">Vérifier mon e-mail</h1>
+        <p class="account-lead" id="verification-instructions" data-copy="verificationLead">Saisissez les six chiffres du code. La vérification démarre automatiquement.</p>
+        <form id="verification-form">
+          <label class="code-label" for="verification-code" data-copy="verificationLabel">Code à 6 chiffres</label>
+          <div class="code-slots" id="code-slots" dir="ltr" data-status="idle">
+            <input id="verification-code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" aria-describedby="verification-instructions verification-status">
+            <div class="code-slots-grid" aria-hidden="true">
+              <span class="code-slot"><span class="code-digit"></span></span>
+              <span class="code-slot"><span class="code-digit"></span></span>
+              <span class="code-slot"><span class="code-digit"></span></span>
+              <span class="code-slot"><span class="code-digit"></span></span>
+              <span class="code-slot"><span class="code-digit"></span></span>
+              <span class="code-slot"><span class="code-digit"></span></span>
+            </div>
+            <span class="code-wash" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg?v=20261110-compte#check"/></svg></span>
+          </div>
+          <p class="verification-status" id="verification-status" role="status"></p>
+        </form>
+        <div class="verification-demo">
+          <div>
+            <p data-copy="verificationDemo">Mode démo · Aucun e-mail envoyé</p>
+            <span data-copy="verificationTry">Essayez ce code :</span> <code id="verification-example" dir="ltr">482601</code>
+          </div>
+          <button type="button" id="verification-resend"><span data-copy="verificationResend">Renvoyer le code</span> <span id="verification-timer" dir="ltr" aria-hidden="true"></span></button>
+        </div>
+        <a class="account-submit account-submit-compact verification-next" id="verification-next" href="connexion.html" hidden><span data-copy="verificationNext">Continuer vers la connexion</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/lucide-drawer.svg?v=20261110-compte#chevron-right"/></svg></a>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="verification.mjs?v=20261111-verification"></script>
+</body>
+</html>
