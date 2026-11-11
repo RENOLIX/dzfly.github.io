@@ -1,4 +1,5 @@
 /* Preview of the traveller account pages. */
+html:has(.account-page){scrollbar-gutter:stable}
 .account-page{background:#fff;color:var(--ink)}
 .account-layout{display:grid;grid-template-columns:minmax(0,43fr) minmax(0,57fr);min-height:100svh}
 .account-cover{
@@ -12,7 +13,7 @@
 .account-slogan{font-family:var(--heading);font-size:clamp(24px,3.2vw,46px);line-height:1.17;font-weight:800;letter-spacing:-.045em}
 .account-slogan span,.account-slogan em{display:block}
 .account-slogan em{margin-block-start:3px;color:#d3efff;font-family:Georgia,serif;font-size:.9em;font-weight:400;letter-spacing:-.028em}
-.account-surface{position:relative;display:flex;align-items:center;justify-content:center;min-width:0;padding:58px clamp(28px,5vw,74px) 34px}
+.account-surface{position:relative;display:flex;align-items:flex-start;justify-content:center;min-width:0;padding:58px clamp(28px,5vw,74px) 34px}
 .account-back{
   display:inline-flex;align-items:center;gap:8px;position:absolute;inset-block-start:24px;inset-inline-start:clamp(28px,5vw,74px);
   color:#385674;font-size:13px;font-weight:650;
@@ -92,6 +93,9 @@ html[dir=rtl] .account-slogan em{font-family:inherit;font-style:normal}
 html[dir=rtl] .account-brand img{object-position:right center}
 html[dir=rtl] .account-back svg{transform:none}
 html[dir=rtl] .account-submit svg{transform:rotate(180deg)}
+@media(min-width:761px){
+  .account-cover{position:sticky;inset-block-start:0;align-self:start;height:100svh}
+}
 @media(max-width:760px){
   .account-layout{grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr}
   .account-cover{min-height:148px;gap:9px;padding:11px 23px 18px;background-position:center,center 47%}
