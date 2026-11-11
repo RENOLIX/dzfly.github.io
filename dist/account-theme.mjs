@@ -18,6 +18,7 @@ const copy={
     signupClosed:'التسجيل غير متاح حاليًا.'
   }
 };
+const accountTabs=document.querySelector('.account-tabs');
 let lang='fr';
 try{lang=JSON.parse(localStorage.getItem('dzfly-language'))||'fr';}catch{}
 if(lang==='en'||lang==='ar'){
@@ -30,9 +31,18 @@ if(lang==='en'||lang==='ar'){
   for(const input of document.querySelectorAll('[data-placeholder]')){
     if(translation[input.dataset.placeholder])input.placeholder=translation[input.dataset.placeholder];
   }
-  document.querySelector('.account-tabs')?.setAttribute('aria-label',translation.navLabel);
+  accountTabs?.setAttribute('aria-label',translation.navLabel);
   document.querySelector('.account-brand').setAttribute('aria-label','DZ FLY — '+translation.back);
   const email=document.querySelector('#account-email');
   if(email)email.placeholder=translation.emailExample;
   document.title=document.querySelector('#account-title').textContent+' — DZ FLY';
+}
+
+const otherAccountTab=accountTabs?.querySelector('a:not([aria-current])');
+if(document.referrer&&otherAccountTab){
+  const previousPage=new URL(document.referrer);
+  const otherPage=new URL(otherAccountTab.href);
+  if(previousPage.origin===otherPage.origin&&previousPage.pathname===otherPage.pathname){
+    accountTabs.classList.add('is-switching');
+  }
 }

@@ -47,4 +47,15 @@
     <circle cx="12" cy="8" r="5" />
     <path d="M20 21a8 8 0 0 0-16 0" />
   </symbol>
+  <symbol id="log-in" viewBox="0 0 24 24">
+    <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+    <polyline points="10 17 15 12 10 7" />
+    <line x1="15" x2="3" y1="12" y2="12" />
+  </symbol>
+  <symbol id="user-round-plus" viewBox="0 0 24 24">
+    <path d="M2 21a8 8 0 0 1 13.292-6" />
+    <circle cx="10" cy="8" r="5" />
+    <path d="M19 16v6" />
+    <path d="M22 19h-6" />
+  </symbol>
 </svg>
