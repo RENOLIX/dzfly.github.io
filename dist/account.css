@@ -72,9 +72,9 @@ html[dir=rtl] .account-tabs{--account-tab-step:-100%}
 .account-phone input:focus{outline:none}
 .account-submit{
   display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;min-height:47px;
-  padding:10px 13px;border-radius:9px;background:var(--navy);color:#fff;font-size:14px;font-weight:750;
+  padding:10px 13px;border-radius:9px;background:#294866;color:#fff;font-size:14px;font-weight:750;
 }
-.account-submit:disabled{background:#294866;color:#fff;opacity:1;cursor:default}
+.account-submit:disabled{opacity:1;cursor:default}
 .account-submit svg{width:16px;height:16px;flex:none}
 .account-cta-row{display:flex;justify-content:center;margin-block-start:3px}
 .account-submit-compact{width:auto;justify-content:center;min-height:42px;padding-inline:16px;font-size:13px}
